@@ -157,7 +157,8 @@ always_ff @(posedge Clock or negedge Resetn) begin
 		Y_p2 <= 8'd0;
 	end else if (Clock_en) begin
 		Y_0 <= Y_p1;
-		Y_0_1 <= Y_p1_1;		
+		Y_0_1 <= Y_p1_1;	
+		Y_p1_1 <= Y_p2;		
 		
 		// for lead-in corner case
 		if (filter_en[3] & ~filter_en[4]) begin
@@ -172,12 +173,12 @@ always_ff @(posedge Clock or negedge Resetn) begin
 			Y_p2 <= Y_calc;
 		
       //////////////////////////////////////////	
-		if (filter_en[2] & ~filter_en[3])
+		if (filter_en[3] & ~filter_en[4])
 			Y_m1 <= Y_p1;
 		else
 			Y_m1 <= Y_0;
 		// for take-down corner case
-		if (filter_en[1])
+		if (filter_en[2])
 			Y_p1 <= Y_calc;		
 	end
 end
