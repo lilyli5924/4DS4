@@ -137,6 +137,7 @@ always_ff @(posedge Clock or negedge Resetn) begin
 	end else if (Clock_en) begin
 		DP_addr_0b <= DP_addr_0a;
 		filter_en <= {filter_en[3:0],DP_wren_0a}; //filter_en shift left by 1 filter_en[0]
+		//For filter 6 and 7, the write enable will be delayed 1 more clock cycle
 		if (Filter_config[2:0] >= 3'd6)
 			DP_wren_1a <= filter_en[4];
 		else if (Filter_config[2:0] == 3'd4)
@@ -157,10 +158,13 @@ always_ff @(posedge Clock or negedge Resetn) begin
 		Y_p2 <= 8'd0;
 	end else if (Clock_en) begin
 		Y_0 <= Y_p1;
+		
+		//Filter 6 and 7 use only
 		Y_0_1 <= Y_p1_1;	
 		Y_p1_1 <= Y_p2;		
 		
-		// for lead-in corner case
+		
+		// for lead-in corner case (6 and 7)
 		if (filter_en[3] & ~filter_en[4]) begin
 			Y_m1_1 <= Y_p1_1;
 			Y_m2   <= Y_p1_1;
@@ -168,15 +172,16 @@ always_ff @(posedge Clock or negedge Resetn) begin
 			Y_m1_1 <= Y_0_1;
 			Y_m2 <= Y_m1_1;
 		end	
-	
+		
+		// when introduces extra registers, the enable cycle should be delayed
 		if (filter_en[2]) 
 			Y_p2 <= Y_calc;
 		
-      //////////////////////////////////////////	
 		if (filter_en[3] & ~filter_en[4])
 			Y_m1 <= Y_p1;
 		else
 			Y_m1 <= Y_0;
+			
 		// for take-down corner case
 		if (filter_en[2])
 			Y_p1 <= Y_calc;		
@@ -223,6 +228,7 @@ always_comb begin
 	end
 end
 
+// Medians detection logic
 always_comb begin
 	position[3] = 1'b0;
 	position[2] = 1'b0;

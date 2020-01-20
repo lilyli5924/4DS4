@@ -9,7 +9,7 @@
 
 // This module provides an SDRAM interface
 // for the LCD / Touch panel and camera peripherals
-module experiment3 (
+module exercise2 (
 	/////// board clocks                      ////////////
 	input logic CLOCK_50_I,                   // 50 MHz clock
 	
