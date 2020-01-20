@@ -9,7 +9,7 @@
 
 // This is the top module
 // It interfaces to the LCD display and touch panel
-module experiment1b (
+module exercise1 (
 	/////// board clocks                      ////////////
 	input logic CLOCK_50_I,                   // 50 MHz clock
 	
