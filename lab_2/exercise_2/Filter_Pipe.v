@@ -194,7 +194,7 @@ assign Y = {4'h0, Y_m1} + {3'h0, Y_0,1'h0} + {4'h0, Y_p1};
 assign Y_out = Y[9:2];
 
 // Filter 6: Edge-detector
-assign Y_edge_long = {{3{Y_p2[7]}},Y_p2,1'h0} + {{3{Y_p1_1[7]}},Y_p1_1,1'h0} - {{3{Y_m1_1[7]}},Y_m1_1,1'h0} - {{3{Y_m2[7]}},Y_m2,1'h0};
+assign Y_edge_long = {3'h0,Y_p2,1'h0} + {3'h0,Y_p1_1,1'h0} - {3'h0,Y_m1_1,1'h0} - {3'h0,Y_m2,1'h0};
 // Use Filter_config[3] to switch from -64~+63 and -128 ~ +127, then output 255 or 0.
 always_comb begin
 	if (Filter_config[3]) begin
