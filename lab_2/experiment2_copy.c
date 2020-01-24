@@ -36,6 +36,7 @@ int main()
     alt_32 i;
     alt_u32 switch_val = 0;
     alt_u32 led_grn_out = 0;
+    alt_u32 led_out = 0;
     alt_u32 counter = 0;
     alt_u32 counter_1 = 0;
     alt_u32 led_red_out = 0;
@@ -43,49 +44,69 @@ int main()
     
     /* Event loop never exits. */
     while (1) {
-	
+
 	// Initialize counter back to 0
 	counter = 0;
 	counter_1 = 0;
 
-    	led_out = (switch_val & 0x1) || (switch_val & 0x2);
-    	led_out = led_out + (((switch_val >> 17) && ((switch_val >> 16) & 0x1)) << 1);
+    led_out = (switch_val & 0x1) || (switch_val & 0x2);
+    led_out = led_out + (((switch_val >> 17) && ((switch_val >> 16) & 0x1)) << 1);
 
 	// RED Position 17 - 13
 	for (i=17; i>=0; i--) {
-            if((switch_val >> i) != 0) {
-	        led_red_out = led_red_out | (i << 13);
-		break;
+		if((switch_val >> i) != 0) {
+			led_red_out = led_red_out &(~(0x1f << 13));
+			led_red_out = led_red_out | (i << 13);
+			break;
 	    }
 	}
 
 	// RED Position 12 - 8
 	for (i=0; i<= 17; i++) {
 	    if ((switch_val >> i) & 0x1) {
-                led_red_out = led_red_out | (i << 8);
-		break;
+	    	led_red_out = led_red_out &(~(0x1f << 8));
+	    	led_red_out = led_red_out | (i << 8);
+	    	break;
 	    }
 	}
 
 	// RED Position 7 - 3
 	for (i=17; i>=0; i--) {
-	    if ((switch_val >> i) != 0) {
-	        counter++;
+	    if (((switch_val >> i) & 0x1) != 0) {
+	        counter = counter + 1;
 	    }
 	}
-        led_red_out = led_red_out | (counter << 3);
+	led_red_out = led_red_out &(~(0x1f << 3));
+    led_red_out = led_red_out | (counter << 3);
+
+	// RED Position 2
+	if (counter > (0x12 - counter)) {
+		led_red_out = led_red_out &(~(0x4));
+		led_red_out = led_red_out &(~(0x2));
+		led_red_out = led_red_out &(~(0x1));
+
+	    led_red_out = led_red_out | 0x4;
+	}
 
 	// RED Position 1
-	if (counter < (0x3ffff - counter)) {
+	if (counter < (0x12 - counter)) {
+		led_red_out = led_red_out &(~(0x4));
+		led_red_out = led_red_out &(~(0x2));
+		led_red_out = led_red_out &(~(0x1));
+
 	    led_red_out = led_red_out | 0x2;
 	}
-	
+
 	// RED Position 0
-	if (counter == 0x3ffff - counter)) {
+	if (counter == (0x12 - counter)) {
+		led_red_out = led_red_out &(~(0x4));
+		led_red_out = led_red_out &(~(0x2));
+		led_red_out = led_red_out &(~(0x1));
+
 	    led_red_out = led_red_out | 0x1;
 	}
-        
-        
+
+
 	// GRN Position 8
 	led_grn_out = led_grn_out | 0x100;
 
