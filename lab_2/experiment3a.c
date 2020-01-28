@@ -1,89 +1,3 @@
-// Copyright by Adam Kinsman, Henry Ko and Nicola Nicolici
-// Developed for the Embedded Systems course (COE4DS4)
-// Department of Electrical and Computer Engineering
-// McMaster University
-// Ontario, Canada
-
-/* 
- * "Small Hello World" example. 
- * 
- * This example prints 'Hello from Nios II' to the STDOUT stream. It runs on
- * the Nios II 'standard', 'full_featured', 'fast', and 'low_cost' example 
- * designs. It requires a STDOUT  device in your system's hardware. 
- *
- * The purpose of this example is to demonstrate the smallest possible Hello 
- * World application, using the Nios II HAL library.  The memory footprint
- * of this hosted application is ~332 bytes by default using the standard 
- * reference design.  For a more fully featured Hello World application
- * example, see the example titled "Hello World".
- *
- * The memory footprint of this example has been reduced by making the
- * following changes to the normal "Hello World" example.
- * Check in the Nios II Software Developers Manual for a more complete 
- * description.
- * 
- * In the SW Application project (small_hello_world):
- *
- *  - In the C/C++ Build page
- * 
- *    - Set the Optimization Level to -Os
- * 
- * In System Library project (small_hello_world_syslib):
- *  - In the C/C++ Build page
- * 
- *    - Set the Optimization Level to -Os
- * 
- *    - Define the preprocessor option ALT_NO_INSTRUCTION_EMULATION 
- *      This removes software exception handling, which means that you cannot 
- *      run code compiled for Nios II cpu with a hardware multiplier on a core 
- *      without a the multiply unit. Check the Nios II Software Developers 
- *      Manual for more details.
- *
- *  - In the System Library page:
- *    - Set Periodic system timer and Timestamp timer to none
- *      This prevents the automatic inclusion of the timer driver.
- *
- *    - Set Max file descriptors to 4
- *      This reduces the size of the file handle pool.
- *
- *    - Check Main function does not exit
- *    - Uncheck Clean exit (flush buffers)
- *      This removes the unneeded call to exit when main returns, since it
- *      won't.
- *
- *    - Check Don't use C++
- *      This builds without the C++ support code.
- *
- *    - Check Small C library
- *      This uses a reduced functionality C library, which lacks  
- *      support for buffering, file IO, floating point and getch(), etc. 
- *      Check the Nios II Software Developers Manual for a complete list.
- *
- *    - Check Reduced device drivers
- *      This uses reduced functionality drivers if they're available. For the
- *      standard design this means you get polled UART and JTAG UART drivers,
- *      no support for the LCD driver and you lose the ability to program 
- *      CFI compliant flash devices.
- *
- *    - Check Access device drivers directly
- *      This bypasses the device file system to access device drivers directly.
- *      This eliminates the space required for the device file system services.
- *      It also provides a HAL version of libc services that access the drivers
- *      directly, further reducing space. Only a limited number of libc
- *      functions are available in this configuration.
- *
- *    - Use ALT versions of stdio routines:
- *
- *           Function                  Description
- *        ===============  =====================================
- *        alt_printf       Only supports %s, %x, and %c ( < 1 Kbyte)
- *        alt_putstr       Smaller overhead than puts with direct drivers
- *                         Note this function doesn't add a newline.
- *        alt_putchar      Smaller overhead than putchar with direct drivers
- *        alt_getchar      Smaller overhead than getchar with direct drivers
- *
- */
-
 #include "system.h"
 #include <io.h>
 #include "sys/alt_stdio.h"
@@ -104,9 +18,10 @@ alt_u16 disp_seven_seg(alt_u8 val) {
         case 10 : return 0x08;
         case 11 : return 0x03;
         case 12 : return 0x46;
-        case 13 : return 0x21;
-        case 14 : return 0x06;
-        case 15 : return 0x0e;
+
+        case 13 : return 0x47; //L
+        case 14 : return 0x02; //G
+        case 15 : return 0x06; //E
         default : return 0x7f;
     }
 }
@@ -117,86 +32,256 @@ int main()
 	alt_u16 a = 0x1;
 	alt_u32 b = 0;
 	alt_8 i;
-	alt_u8 flag = 0;
+	alt_8 sw_17 = 0;
+	alt_8 sw_16 = 0;
+	alt_16 sw_15 = 0;
+	alt_16 sw_15_buf = 0;
+	alt_16 min = 0;
+	alt_16 max = 0;
+	alt_32 sum = 0;
+	alt_16 avg = 0;
 	alt_u32 switch_val = 0;
-	alt_u32 switch_val_buf = 0;
+	alt_u8 sw_16_buf = 0;
 	alt_up_character_lcd_dev *lcd_0;
-
+	alt_16 record_val[16];
 	char lcd_string[17];
-	lcd_string[0] = 'S';
-	lcd_string[1] = 'w';
-	lcd_string[2] = 'i';
-	lcd_string[3] = 't';
-	lcd_string[4] = 'c';
-	lcd_string[5] = 'h';
+
+	lcd_string[0] = ' ';
+	lcd_string[1] = ' ';
+	lcd_string[2] = ' ';
+	lcd_string[3] = ' ';
+	lcd_string[4] = ' ';
+	lcd_string[5] = ' ';
 	lcd_string[6] = ' ';
 	lcd_string[7] = ' ';
 	lcd_string[8] = ' ';
 	lcd_string[9] = ' ';
-	lcd_string[10] = 'c';
-	lcd_string[11] = 'h';
-	lcd_string[12] = 'a';
-	lcd_string[13] = 'n';
-	lcd_string[14] = 'g';
-	lcd_string[15] = 'e';
+	lcd_string[10] = ' ';
+	lcd_string[11] = ' ';
+	lcd_string[12] = ' ';
+	lcd_string[13] = ' ';
+	lcd_string[14] = ' ';
+	lcd_string[15] = ' ';
 	lcd_string[16] = '\0';
 
-    alt_printf("Experiment 3a:\n");
-    
+	char term_string [17];
+	term_string[0] = ' ';
+	term_string[1] = ' ';
+	term_string[2] = ' ';
+	term_string[3] = ' ';
+	term_string[4] = ' ';
+	term_string[5] = ' ';
+	term_string[6] = ' ';
+	term_string[7] = ' ';
+	term_string[8] = ' ';
+	term_string[9] = ' ';
+	term_string[10] = ' ';
+	term_string[11] = ' ';
+	term_string[12] = ' ';
+	term_string[13] = ' ';
+	term_string[14] = ' ';
+	term_string[15] = ' ';
+	term_string[16] = '\0';
+
+	record_val[0] = 0;
+	record_val[1] = 0;
+	record_val[2] = 0;
+	record_val[3] = 0;
+	record_val[4] = 0;
+	record_val[5] = 0;
+	record_val[6] = 0;
+	record_val[7] = 0;
+	record_val[8] = 0;
+	record_val[9] = 0;
+	record_val[10] = 0;
+	record_val[11] = 0;
+	record_val[12] = 0;
+	record_val[13] = 0;
+	record_val[14] = 0;
+	record_val[15] = 0;
+
+    alt_printf("Exercise 2:\n");
     lcd_0 = alt_up_character_lcd_open_dev(CHARACTER_LCD_0_NAME);
     
     if (lcd_0 == NULL) alt_printf("Error opening LCD device\n");
     else alt_printf("LCD device opened.\n");
     
     alt_up_character_lcd_init(lcd_0);
-    alt_up_character_lcd_string(lcd_0, "Experiment 3a");
-    alt_up_character_lcd_set_cursor_pos(lcd_0, 0, 1);
-/*
-    if (flag){
-    	alt_up_character_lcd_string(lcd_0, "Switch changed.");
-    	flag = 0;
-    }else{
-    	alt_up_character_lcd_string(lcd_0, "Welcome");
-    }
-*/
-	alt_up_character_lcd_string(lcd_0, "Welcome");
+    alt_up_character_lcd_string(lcd_0, "exercise 2");
 
   /* Event loop never exits. */
   while (1) {
 	  b = b + 1;
-	  if(switch_val != switch_val_buf){
-		  alt_printf("%x, %x \n", switch_val, switch_val_buf);
-		  for (i=0; i<18; i++)
-			  if (((switch_val_buf ^ switch_val) >> i) & 0x1) //66666
-				  break;
-		  if (i <10)
-			  lcd_string[7] = ' ';
-		  else
-			  lcd_string[7] = '0' + (i/10);
-		  lcd_string[8] = '0' + (i%10);
-		  alt_up_character_lcd_set_cursor_pos(lcd_0, 0, 1);
-		  alt_up_character_lcd_string(lcd_0, lcd_string);
-		  switch_val_buf = switch_val;
-	  }
+	  sw_16_buf = sw_16; //assign old switch 16
+	  sw_15_buf = sw_15; //assign old switch [15:0]
 	  switch_val = IORD(SWITCH_I_BASE, 0);
-	  IOWR(LED_RED_O_BASE, 0, switch_val);
-	  if (switch_val == 0) {
-	     IOWR(SEVEN_SEGMENT_N_O_1_BASE, 0,
-	     disp_seven_seg(16));
-	     IOWR(SEVEN_SEGMENT_N_O_0_BASE, 0,
-	     disp_seven_seg(16));
-	     } else {
-	     for (i = 17; i >= 0; i--) {
-	        if ((switch_val >> i) != 0) {
-	        IOWR(SEVEN_SEGMENT_N_O_1_BASE, 0,
-	        disp_seven_seg((i >> 4) & 0xF));
-	        IOWR(SEVEN_SEGMENT_N_O_0_BASE, 0,
-	        disp_seven_seg(i & 0xF));
-	        i = 0;
-	         }
-	      }
+
+	  //value of switch[17]
+	  sw_17 = (switch_val >> 17) & 0x1;
+	  //value of switch[16]
+	  sw_16 = (switch_val >> 16) & 0x1;
+	  //value of switch [15:0]
+	  sw_15 = switch_val & 0xFFFF;
+
+	  if (sw_15 != sw_15_buf){
+
+		  // Only sum up the last 16 values
+		  sum = sum - record_val[0] + sw_15;
+
+		  // Divided by 16
+		  avg = sum/16;
+
+		  record_val[0] = record_val[1];
+	      record_val[1] = record_val[2];
+	      record_val[2] = record_val[3];
+	      record_val[3] = record_val[4];
+	      record_val[4] = record_val[5];
+	      record_val[5] = record_val[6];
+	      record_val[6] = record_val[7];
+	      record_val[7] = record_val[8];
+	      record_val[8] = record_val[9];
+	      record_val[9] = record_val[10];
+	      record_val[10] = record_val[11];
+	      record_val[11] = record_val[12];
+	      record_val[12] = record_val[13];
+	      record_val[13] = record_val[14];
+	      record_val[14] = record_val[15];
+	      record_val[15] = sw_15;
+	      alt_printf("sw_15 in: %x\n",sw_15);
+	      alt_printf("sum is: %x, avg is %x \n",sum,avg);
+	      min = record_val[0];
+		  max = record_val[0];
+		
+		// Compare each record value in the register and find the min and max
+		for (i=1;i<16;i++){
+			// max
+			if (record_val[i] < 0){
+			  if (max < 0){
+				  if (((~record_val[i]) + 1) < ((~max) + 1)) {
+					  max = record_val[i];
+				  }
+			  }
+		  }else {
+			  if (max < 0){
+				  max = record_val[i];
+			  }else{
+				  if (record_val[i] > max){
+					  max = record_val[i];
+				  }
+			  }
+		  }
+		  // min
+			if (record_val[i] < 0){
+			  if (min < 0){
+				  if (((~record_val[i]) + 1) > ((~min) + 1)) {
+					  min = record_val[i];
+				  }
+			  }
+			  else{
+				  min = record_val[i];//min = positive; record = negative
+			  }
+		  }else {
+			  if (min > 0){
+				  if (record_val[i] < min){
+					  min = record_val[i];
+				  }
+			  }
+		  }
+		  
+		}
+		//alt_printf("min value is: %x , max is =  %x\n", min, max);
 	  }
 
+	  if (sw_17){
+		if (sw_16 == 0 && sw_16_buf == 1){    // switch 16 from high to low
+			IOWR(LED_RED_O_BASE, 0, switch_val);
+			alt_printf("%x, %x \n",avg,sw_15);
+			if (avg < sw_15){
+				IOWR(SEVEN_SEGMENT_N_O_0_BASE, 0, disp_seven_seg(13));}
+			else if (avg > sw_15){
+				IOWR(SEVEN_SEGMENT_N_O_0_BASE, 0, disp_seven_seg(14));}
+			else {
+				IOWR(SEVEN_SEGMENT_N_O_0_BASE, 0, disp_seven_seg(15));}
+		}
+		else if (sw_16 == 1 && sw_16_buf == 0) { // switch 16 from low to high
+				IOWR(SEVEN_SEGMENT_N_O_0_BASE, 0, 0x7f);
+				IOWR(LED_GREEN_O_BASE,0,0x0);
+				IOWR(LED_RED_O_BASE,0,0x0);
+		}
+	  }else {
+		IOWR(LED_RED_O_BASE, 0, switch_val);
+		if (sw_16 == 0 && sw_16_buf == 1){ // switch 16 from high to low
+			// Finding out the number on each bit in decimal
+			if(min < 0) {
+				alt_u16 min_val = 0;
+				min_val = (~min) + 1;
+				alt_printf("min = %x, min_val = %x \n", min, min_val);
+				lcd_string[1] = '0' + (min_val/10000);
+				lcd_string[2] = '0' + ((min_val%10000)/1000);
+				lcd_string[3] = '0' + ((min_val%1000)/100);
+				lcd_string[4] = '0' + ((min_val%100)/10);
+				lcd_string[5] = '0' + (min_val%10);
+
+				lcd_string [0] = '-';
+			}
+			else {
+				lcd_string[0] = '0' + (min/10000);
+				lcd_string[1] = '0' + ((min%10000)/1000);
+				lcd_string[2] = '0' + ((min%1000)/100);
+				lcd_string[3] = '0' + ((min%100)/10);
+				lcd_string[4] = '0' + (min%10);
+
+				for (i=1; i<=4; i++){
+					if (lcd_string[0] == '0'){
+						lcd_string[0] = lcd_string[1];
+						lcd_string[1] = lcd_string[2];
+						lcd_string[2] = lcd_string[3];
+						lcd_string[3] = lcd_string[4];
+						lcd_string[4] = ' ';
+					}else
+						break;
+				}
+			}
+
+			alt_up_character_lcd_init(lcd_0);
+			alt_up_character_lcd_set_cursor_pos(lcd_0, 0, 0);
+		    alt_up_character_lcd_string(lcd_0, lcd_string);
+
+		}else if (sw_16 == 1 && sw_16_buf == 0) { // switch 16 from low to high
+			if(max < 0) {
+				alt_u16 max_val;
+				max_val = (~max) + 1;
+
+				term_string[1] = '0' + (max_val/10000);
+				term_string[2] = '0' + ((max_val%10000)/1000);
+				term_string[3] = '0' + ((max_val%1000)/100);
+				term_string[4] = '0' + ((max_val%100)/10);
+				term_string[5] = '0' + (max_val%10);
+
+				term_string [0] = '-';
+			}
+			else {
+				term_string[0] = '0' + (max/10000);
+				term_string[1] = '0' + ((max%10000)/1000);
+				term_string[2] = '0' + ((max%1000)/100);
+				term_string[3] = '0' + ((max%100)/10);
+				term_string[4] = '0' + (max%10);
+
+				for (i=1; i<=4; i++){
+					if (term_string[0] == '0'){
+						term_string[0] = term_string[1];
+						term_string[1] = term_string[2];
+						term_string[2] = term_string[3];
+						term_string[3] = term_string[4];
+						term_string[4] = ' ';
+					}else
+						break;
+				}
+			}
+
+		    alt_printf("%s\n",term_string);
+		}
+	  }
 	  if (b == 10000000) {
 		  b = 0;
 		  if (a == 0x100) a = 0x1;
