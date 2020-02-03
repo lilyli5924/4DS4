@@ -1,0 +1,9 @@
+#ifndef _elevator_H__
+#define __elevator_H__
+
+// Global functions
+void elevator(floor_P *, counter *, int* array);
+void FindNext(int* array, floor_P *floor);
+void opendoor (int* array, counter *load_config, floor_P *floor);
+
+#endif

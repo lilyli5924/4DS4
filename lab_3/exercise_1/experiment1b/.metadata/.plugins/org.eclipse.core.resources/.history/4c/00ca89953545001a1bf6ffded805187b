@@ -1,0 +1,35 @@
+
+#include "define.h"
+
+void insertSort(int *floor_buf, int key){
+		int i;
+	    for (i = ARRAY_SIZE_MAX - 1; (i >= 0 && floor_buf[i] > key); i--)
+	    	floor_buf[i + 1] = arr[i];
+	    floor_buf[i + 1] = key;
+}
+
+void handle_switch_interrupt(int *floor_buf){
+	int sw_grp;
+	sw_grp = IORD(SWITCH_I_BASE, 3);
+	int i;
+	for (i=0; i<12; i++){
+		if (((sw_grp >> i) & 0x1) == 1){
+			insertSort(insertSort,i);
+			break;
+		}
+	}
+
+	IOWR(SWITCH_I_BASE, 3, 0x0);
+	//printf("Switch %d is triggered :) \n", i);
+	printf("floor list is ");
+	for(i = 0; i < 12; i++){
+		print("%d, ",floor_buf[i]);
+	}
+	}
+}
+
+void init_switch_irq(int *floor_buf) {
+	IOWR(SWITCH_I_BASE, 3, 0x0); // edge capture register
+	IOWR(SWITCH_I_BASE, 2, 0xFFF); // IRQ mask
+	alt_irq_register(SWITCH_I_IRQ, (void*)floor_buf, (void*)handle_switch_interrupt);
+}

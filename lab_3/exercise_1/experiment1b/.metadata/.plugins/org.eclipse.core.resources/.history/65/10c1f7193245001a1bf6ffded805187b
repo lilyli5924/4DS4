@@ -1,0 +1,21 @@
+
+#include "define.h"
+
+void handle_switch_interrupt(){
+	int sw_grp;
+	sw_grp = IORD(SWITCH_I_BASE, 3);
+	int i;
+	for (i=0; i<12; i++){
+		if ((sw_grp >> 1) & 0x1 == 1){
+			break;
+		}
+	}
+	IOWR(SWITCH_I_BASE, 3, 0x0);
+	printf("Switch %d is triggered :) \n", i);
+}
+
+void init_switch_irq() {
+	IOWR(SWITCH_I_BASE, 3, 0x0); // edge capture register
+	IOWR(SWITCH_I_BASE, 2, 0xFFF); // IRQ mask
+	alt_irq_register(SWITCH_I_IRQ, NULL, (void*)handle_switch_interrupt);
+}

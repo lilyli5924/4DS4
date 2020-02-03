@@ -1,0 +1,203 @@
+Partition Merge report for experiment1b
+Sun Feb 02 18:06:15 2020
+Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Partition Merge Partition Statistics
+  5. Partition Merge Resource Usage Summary
+  6. Partition Merge RAM Summary
+  7. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------+
+; Partition Merge Summary                                                             ;
++------------------------------------+------------------------------------------------+
+; Partition Merge Status             ; Successful - Sun Feb 02 18:06:15 2020          ;
+; Quartus II 32-bit Version          ; 12.0 Build 263 08/02/2012 SP 2 SJ Full Version ;
+; Revision Name                      ; experiment1b                                   ;
+; Top-level Entity Name              ; experiment1b                                   ;
+; Family                             ; Cyclone II                                     ;
+; Total logic elements               ; 2,113 / 33,216 ( 6 % )                         ;
+;     Total combinational functions  ; 1,817 / 33,216 ( 5 % )                         ;
+;     Dedicated logic registers      ; 1,224 / 33,216 ( 4 % )                         ;
+; Total registers                    ; 1224                                           ;
+; Total pins                         ; 96 / 475 ( 20 % )                              ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 11,264 / 483,840 ( 2 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                 ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
++------------------------------------+------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Post-Fit          ; Post-Fit               ;                                ;
+; sld_hub:auto_hub               ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_hub:auto_hub               ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                                        ;
++---------------------------------------------+----------------------+-----------------------+--------------------------------+
+; Statistic                                   ; Top                  ; sld_hub:auto_hub      ; hard_block:auto_generated_inst ;
++---------------------------------------------+----------------------+-----------------------+--------------------------------+
+; Estimated Total logic elements              ; 1981 / 33216 ( 6 % ) ; 132 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
+;                                             ;                      ;                       ;                                ;
+; Total combinational functions               ; 1695                 ; 122                   ; 0                              ;
+; Logic element usage by number of LUT inputs ;                      ;                       ;                                ;
+;     -- 4 input functions                    ; 888                  ; 52                    ; 0                              ;
+;     -- 3 input functions                    ; 524                  ; 45                    ; 0                              ;
+;     -- <=2 input functions                  ; 283                  ; 25                    ; 0                              ;
+;                                             ;                      ;                       ;                                ;
+; Logic elements by mode                      ;                      ;                       ;                                ;
+;     -- normal mode                          ; 1532                 ; 118                   ; 0                              ;
+;     -- arithmetic mode                      ; 163                  ; 4                     ; 0                              ;
+;                                             ;                      ;                       ;                                ;
+; Total registers                             ; 1148                 ; 76                    ; 0                              ;
+;     -- Dedicated logic registers            ; 1148 / 33216 ( 3 % ) ; 76 / 33216 ( < 1 % )  ; 0 / 33216 ( 0 % )              ;
+;     -- I/O registers                        ; 0                    ; 0                     ; 0                              ;
+;                                             ;                      ;                       ;                                ;
+; Virtual pins                                ; 0                    ; 0                     ; 0                              ;
+; I/O pins                                    ; 96                   ; 0                     ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )       ; 0 / 70 ( 0 % )        ; 0 / 70 ( 0 % )                 ;
+; Total memory bits                           ; 11264                ; 0                     ; 0                              ;
+; Total RAM block bits                        ; 27648                ; 0                     ; 0                              ;
+; JTAG                                        ; 1 / 1 ( 100 % )      ; 0 / 1 ( 0 % )         ; 0 / 1 ( 0 % )                  ;
+; M4K                                         ; 6 / 105 ( 5 % )      ; 0 / 105 ( 0 % )       ; 0 / 105 ( 0 % )                ;
+;                                             ;                      ;                       ;                                ;
+; Connections                                 ;                      ;                       ;                                ;
+;     -- Input Connections                    ; 268                  ; 118                   ; 0                              ;
+;     -- Registered Input Connections         ; 130                  ; 84                    ; 0                              ;
+;     -- Output Connections                   ; 213                  ; 173                   ; 0                              ;
+;     -- Registered Output Connections        ; 4                    ; 172                   ; 0                              ;
+;                                             ;                      ;                       ;                                ;
+; Internal Connections                        ;                      ;                       ;                                ;
+;     -- Total Connections                    ; 10435                ; 825                   ; 0                              ;
+;     -- Registered Connections               ; 4271                 ; 597                   ; 0                              ;
+;                                             ;                      ;                       ;                                ;
+; External Connections                        ;                      ;                       ;                                ;
+;     -- Top                                  ; 192                  ; 289                   ; 0                              ;
+;     -- sld_hub:auto_hub                     ; 289                  ; 2                     ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0                    ; 0                     ; 0                              ;
+;                                             ;                      ;                       ;                                ;
+; Partition Interface                         ;                      ;                       ;                                ;
+;     -- Input Ports                          ; 63                   ; 22                    ; 0                              ;
+;     -- Output Ports                         ; 64                   ; 39                    ; 0                              ;
+;     -- Bidir Ports                          ; 16                   ; 0                     ; 0                              ;
+;                                             ;                      ;                       ;                                ;
+; Registered Ports                            ;                      ;                       ;                                ;
+;     -- Registered Input Ports               ; 0                    ; 3                     ; 0                              ;
+;     -- Registered Output Ports              ; 0                    ; 29                    ; 0                              ;
+;                                             ;                      ;                       ;                                ;
+; Port Connectivity                           ;                      ;                       ;                                ;
+;     -- Input Ports driven by GND            ; 0                    ; 9                     ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                    ; 0                     ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                    ; 0                     ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                    ; 0                     ; 0                              ;
+;     -- Input Ports with no Source           ; 0                    ; 0                     ; 0                              ;
+;     -- Output Ports with no Source          ; 0                    ; 0                     ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                    ; 1                     ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                    ; 25                    ; 0                              ;
++---------------------------------------------+----------------------+-----------------------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++-----------------------------------------------------------------------------+
+; Partition Merge Resource Usage Summary                                      ;
++---------------------------------------------+-------------------------------+
+; Resource                                    ; Usage                         ;
++---------------------------------------------+-------------------------------+
+; Estimated Total logic elements              ; 2,113 / 33,216 ( 6 % )        ;
+;                                             ;                               ;
+; Total combinational functions               ; 1817                          ;
+; Logic element usage by number of LUT inputs ;                               ;
+;     -- 4 input functions                    ; 940                           ;
+;     -- 3 input functions                    ; 569                           ;
+;     -- <=2 input functions                  ; 308                           ;
+;                                             ;                               ;
+; Logic elements by mode                      ;                               ;
+;     -- normal mode                          ; 1650                          ;
+;     -- arithmetic mode                      ; 167                           ;
+;                                             ;                               ;
+; Total registers                             ; 1224                          ;
+;     -- Dedicated logic registers            ; 1224                          ;
+;     -- I/O registers                        ; 0                             ;
+;                                             ;                               ;
+; I/O pins                                    ; 96                            ;
+; Total memory bits                           ; 11264                         ;
+; Maximum fan-out node                        ; clock_50_i_clk_in_clk~clkctrl ;
+; Maximum fan-out                             ; 1068                          ;
+; Total fan-out                               ; 10937                         ;
+; Average fan-out                             ; 3.34                          ;
++---------------------------------------------+-------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------------------------------------------------+
+; Name                                                                                                                                                                                                                                                                                                                                    ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                            ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------------------------------------------------+
+; experiment1b_cpu_0:cpu_0|experiment1b_cpu_0_nios2_oci:the_experiment1b_cpu_0_nios2_oci|experiment1b_cpu_0_nios2_ocimem:the_experiment1b_cpu_0_nios2_ocimem|experiment1b_cpu_0_ociram_lpm_dram_bdp_component_module:experiment1b_cpu_0_ociram_lpm_dram_bdp_component|altsyncram:the_altsyncram|altsyncram_ve82:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port   ; 256          ; 32           ; 256          ; 32           ; 8192 ; experiment1b_cpu_0_ociram_default_contents.mif ;
+; experiment1b_cpu_0:cpu_0|experiment1b_cpu_0_register_bank_a_module:experiment1b_cpu_0_register_bank_a|altsyncram:the_altsyncram|altsyncram_ikg1:auto_generated|ALTSYNCRAM                                                                                                                                                               ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; experiment1b_cpu_0_rf_ram_a.mif                ;
+; experiment1b_cpu_0:cpu_0|experiment1b_cpu_0_register_bank_b_module:experiment1b_cpu_0_register_bank_b|altsyncram:the_altsyncram|altsyncram_jkg1:auto_generated|ALTSYNCRAM                                                                                                                                                               ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; experiment1b_cpu_0_rf_ram_b.mif                ;
+; experiment1b_jtag_uart_0:jtag_uart_0|experiment1b_jtag_uart_0_scfifo_r:the_experiment1b_jtag_uart_0_scfifo_r|scfifo:rfifo|scfifo_1n21:auto_generated|a_dpfifo_8t21:dpfifo|dpram_5h21:FIFOram|altsyncram_9tl1:altsyncram2|ALTSYNCRAM                                                                                                     ; AUTO ; Simple Dual Port ; 64           ; 8            ; 64           ; 8            ; 512  ; None                                           ;
+; experiment1b_jtag_uart_0:jtag_uart_0|experiment1b_jtag_uart_0_scfifo_w:the_experiment1b_jtag_uart_0_scfifo_w|scfifo:wfifo|scfifo_1n21:auto_generated|a_dpfifo_8t21:dpfifo|dpram_5h21:FIFOram|altsyncram_9tl1:altsyncram2|ALTSYNCRAM                                                                                                     ; AUTO ; Simple Dual Port ; 64           ; 8            ; 64           ; 8            ; 512  ; None                                           ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------------------------------------------------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Partition Merge
+    Info: Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Full Version
+    Info: Processing started: Sun Feb 02 18:06:14 2020
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off experiment1b -c experiment1b --merge=on
+Info (35006): Using previously generated Fitter netlist for partition "Top"
+Info (35007): Using synthesis netlist for partition "sld_hub:auto_hub"
+Info (35002): Resolved and merged 2 partition(s)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2305 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 26 input pins
+    Info (21059): Implemented 58 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 2195 logic cells
+    Info (21064): Implemented 6 RAM segments
+Info: Quartus II 32-bit Partition Merge was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 376 megabytes
+    Info: Processing ended: Sun Feb 02 18:06:15 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

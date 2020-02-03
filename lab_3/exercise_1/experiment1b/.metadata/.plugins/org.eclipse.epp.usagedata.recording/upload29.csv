@@ -1,0 +1,226 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580688655159
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688658669
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688665126
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688684645
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1580688686319
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688687114
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.paste",1580688688254
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.paste",1580688691160
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1580688732917
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1580688741328
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.paste",1580688742482
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.paste",1580688746785
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580688751961
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688754798
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688764234
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1580688772847
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.paste",1580688774339
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580688781617
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.undo",1580688792840
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1580688807191
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580688807633
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.findReplace",1580688807652
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.paste",1580688808070
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580688815621
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1580688820679
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688823494
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1580688827878
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688829325
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1580688834774
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688839725
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1580688841815
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688841987
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688857642
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1580688868479
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.paste",1580688872331
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580688881637
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688886269
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688896642
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580688899847
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580688901129
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580688903783
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580688905362
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580688906483
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580688909834
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580688922350
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580688923480
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580688926760
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580688965532
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689000606
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580689022010
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.undo",1580689033880
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580689040444
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689047451
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580689049089
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580689050161
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689053503
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689141868
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689184525
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689231757
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689233161
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689235613
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580689237279
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580689238407
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689241708
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580689325892
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580689327020
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689330358
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580689357492
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580689358611
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689361923
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689385184
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689407159
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689410794
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689413718
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580689415303
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580689416461
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689419733
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689576218
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689677396
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689693869
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689696237
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689698698
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580689770568
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689774408
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580689792894
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580689798892
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689800381
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1580689812602
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.paste",1580689816568
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580689818430
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689822685
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580689824359
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580689825487
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689828762
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689862554
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1580689881660
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.paste",1580689886562
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580689887217
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689889403
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689890641
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580689898835
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689903087
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689903297
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689904312
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580689904316
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689904682
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580689905432
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689932873
+error,log,,,"Cannot initialize the Nios II Console view for use. Byte stream service may still be open by another process like 'nios2-terminal'.",1580689943265
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689943280
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689945266
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689945266
+error,log,,,"Cannot initialize the Nios II Console view for use. Byte stream service may still be open by another process like 'nios2-terminal'.",1580689948203
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689948210
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689949195
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689950507
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580689954365
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689957277
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580689958324
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580689959448
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580689962736
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580689986944
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580689997723
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690002684
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580690004261
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580690005381
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690008663
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690111098
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1580690136563
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.paste",1580690140536
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690145495
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690152936
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580690153992
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580690155125
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690158401
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690178228
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690205278
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690212223
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690216299
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580690217860
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580690218984
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690222288
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690311865
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690319287
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690338333
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690341175
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690344348
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690356924
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690361117
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690366375
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580690367949
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580690369069
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690372443
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690408632
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690416498
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690420392
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690425038
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690446976
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690461050
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690463329
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690471759
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1580690476614
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690485874
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690492219
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580690498813
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.findReplace",1580690498832
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580690503267
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580690504327
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.findReplace",1580690504327
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580690509478
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690510120
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690511723
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690515080
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690518216
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690522405
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690527380
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580690528999
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580690530072
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690533376
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690561917
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690568986
+opened,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690572847
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690572863
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690604759
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690619625
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.cut",1580690633118
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.undo",1580690636193
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.paste",1580690638180
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690639879
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690642917
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580690644493
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580690645624
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690648931
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690766737
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690792484
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690839527
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690870711
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690896608
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690899112
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.save",1580690912877
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690916633
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580690919333
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690964737
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580690966317
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580690967442
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580690970697
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580691003623
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580691017409
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580691031252
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580691036428
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580691037772
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580691040099
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580691041702
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580691042818
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580691046228
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580691068802
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580691069927
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580691073230
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580691079586
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1580691081789
+activated,editor,org.eclipse.cdt.ui,5.2.1.201009141542,"org.eclipse.cdt.ui.editor.CEditor",1580691081809
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580691086312
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1580691087904
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8",1580691089022
+activated,view,com.altera.sbtgui.launch,12.0.0.263,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1580691092304
