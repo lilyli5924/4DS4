@@ -17,7 +17,7 @@
 #include <sys/alt_irq.h>
 #include "PB_button.h"
 #include "custom_counter.h"
-#include "swtich.h"
+#include "switch.h"
 
 #endif
 
@@ -27,7 +27,6 @@ typedef struct {
 	int door_open;
 	int elevator_move;
 	int hold;
-	int state1;
 } counter;
 
 typedef struct {

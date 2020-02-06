@@ -8,13 +8,16 @@
 #define __CUSTOM_COUNTER_H__
 
 // Global functions
-void handle_counter_expire_interrupts();
-//void handle_door_expire_interrupts();
-int read_counter();
-void reset_counter();
-int read_counter_interrupt();
+void handle_move_expire_interrupts();
+void handle_door_expire_interrupts();
+void reset_door_counter();
+int read_move_counter();
+void reset_move_counter();
+int read_move_interrupt();
+int read_door_interrupt();
 void init_counter_irq();
 void load_counter_config(int*);
+void load_door_config (int*);
 alt_u16 disp_seven_seg(alt_u8);
 
 #endif

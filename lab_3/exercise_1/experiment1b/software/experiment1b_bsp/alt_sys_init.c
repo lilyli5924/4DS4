@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'experiment1b'
  * SOPC Builder design path: C:/Users/lim14/coe4ds4_lab3_2020/coe4ds4_lab3_2020/experiment1b/experiment1b.sopcinfo
  *
- * Generated: Thu Jan 30 16:00:50 EST 2020
+ * Generated: Wed Feb 05 11:06:24 EST 2020
  */
 
 /*

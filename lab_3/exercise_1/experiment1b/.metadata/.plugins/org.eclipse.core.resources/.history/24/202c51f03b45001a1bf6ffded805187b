@@ -1,8 +1,0 @@
-#ifndef _elevator_H__
-#define __elevator_H__
-
-// Global functions
-void handle_switch_interrupts();
-void elevator();
-
-#endif

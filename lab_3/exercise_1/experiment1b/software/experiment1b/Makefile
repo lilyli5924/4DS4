@@ -144,9 +144,9 @@ ELF := experiment1b.elf
 # Paths to C, C++, and assembly source files.
 C_SRCS += PB_button.c
 C_SRCS += custom_counter.c
+C_SRCS += elevator.c
 C_SRCS += experiment1b.c
 C_SRCS += switch.c
-C_SRCS += elevator.c
 CXX_SRCS :=
 ASM_SRCS :=
 

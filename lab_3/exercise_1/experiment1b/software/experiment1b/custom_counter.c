@@ -28,25 +28,37 @@ alt_u16 disp_seven_seg(alt_u8 val) {
 
 
 // ISR when the counter is expired
-void handle_counter_expire_interrupts(floor_P* current_floor)
+void handle_move_expire_interrupts(floor_P* current_floor)
 {
-	if (current_floor->state){
-		if(current_floor->cur_floor < current_floor->des_floor) {
-			current_floor->cur_floor = current_floor->cur_floor + 1;
-		}else {
-			current_floor->cur_floor = current_floor->cur_floor - 1;
-		}
-		IOWR(SEVEN_SEGMENT_N_O_0_BASE, 0, disp_seven_seg((current_floor->cur_floor)));
-		printf("Moving!, current floor is %d \n",current_floor->cur_floor);
-
-	}else {
-		current_floor->state = 1;
+	if(current_floor->cur_floor < current_floor->des_floor) {
+		current_floor->cur_floor = current_floor->cur_floor + 1;
 	}
+
+	if (current_floor->cur_floor > current_floor->des_floor) {
+		current_floor->cur_floor = current_floor->cur_floor - 1;
+	}
+	if (current_floor->cur_floor == current_floor->des_floor)
+		current_floor->state = 0;
+
+	IOWR(SEVEN_SEGMENT_N_O_0_BASE, 0, disp_seven_seg((current_floor->cur_floor)));
+	printf("Moving!, current floor is %d \n",current_floor->cur_floor);
 
 	IOWR(CUSTOM_COUNTER_COMPONENT_0_BASE, 2, 0);
 }
 
-void reset_counter() {
+// ISR when the door counter is expired
+void handle_door_expire_interrupts(floor_P* current_floor)
+{
+	if(current_floor->hold_1 == 0) {
+		printf("Door closed. \n");
+	}
+	current_floor->state = 1;
+
+
+	IOWR(CUSTOM_COUNTER_COMPONENT_1_BASE, 2, 0);
+}
+
+void reset_move_counter() {
 	IOWR(CUSTOM_COUNTER_COMPONENT_0_BASE, 1, 1);
 	IOWR(CUSTOM_COUNTER_COMPONENT_0_BASE, 1, 0);
 
@@ -54,12 +66,24 @@ void reset_counter() {
 
 }
 
+void reset_door_counter() {
+	IOWR(CUSTOM_COUNTER_COMPONENT_1_BASE, 1, 1);
+	IOWR(CUSTOM_COUNTER_COMPONENT_1_BASE, 1, 0);
+
+	IOWR(CUSTOM_COUNTER_COMPONENT_1_BASE, 2, 0);
+
+}
+
 int read_counter() {
 	return IORD(CUSTOM_COUNTER_COMPONENT_0_BASE, 0);
 }
 
-int read_counter_interrupt() {
+int read_move_interrupt() {
 	return IORD(CUSTOM_COUNTER_COMPONENT_0_BASE, 2);
+}
+
+int read_door_interrupt() {
+	return IORD(CUSTOM_COUNTER_COMPONENT_1_BASE, 2);
 }
 
 void load_counter_config(int* config) {
@@ -68,12 +92,18 @@ void load_counter_config(int* config) {
 	IOWR(CUSTOM_COUNTER_COMPONENT_0_BASE, 3, *config);
 }
 
-// Function for initializing the ISR of the Counter
-void init_counter_irq(floor_P *current_floor) {
-	IOWR(CUSTOM_COUNTER_COMPONENT_0_BASE, 2, 0);
+void load_door_config(int* config) {
+	printf("Loading counter config %d\n", *config);
 
-	alt_irq_register(CUSTOM_COUNTER_COMPONENT_0_IRQ, (void*)current_floor, (void*)handle_counter_expire_interrupts );
+	IOWR(CUSTOM_COUNTER_COMPONENT_1_BASE, 3, *config);
 }
+
+// Function for initializing the ISR of the Counter
+//void init_counter_irq(floor_P *current_floor) {
+//	IOWR(CUSTOM_COUNTER_COMPONENT_0_BASE, 2, 0);
+
+//	alt_irq_register(CUSTOM_COUNTER_COMPONENT_0_IRQ, (void*)current_floor, (void*)handle_counter_expire_interrupts );
+//}
 
 ////////////////////////
 // CODE SECTION END   //

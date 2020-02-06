@@ -1,4 +1,3 @@
-
 #include "define.h"
 
 void insertSort(int *floor_buf, int key){

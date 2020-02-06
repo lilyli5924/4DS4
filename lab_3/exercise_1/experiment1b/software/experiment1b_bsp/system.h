@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'experiment1b'
  * SOPC Builder design path: C:/Users/lim14/coe4ds4_lab3_2020/coe4ds4_lab3_2020/experiment1b/experiment1b.sopcinfo
  *
- * Generated: Sun Feb 02 18:07:12 EST 2020
+ * Generated: Wed Feb 05 11:06:24 EST 2020
  */
 
 /*
@@ -281,19 +281,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x101060
+#define ALT_STDERR_BASE 0x101070
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x101060
+#define ALT_STDIN_BASE 0x101070
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x101060
+#define ALT_STDOUT_BASE 0x101070
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -316,6 +316,20 @@
 
 
 /*
+ * custom_counter_component_1 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_custom_counter_component_1 custom_counter_component
+#define CUSTOM_COUNTER_COMPONENT_1_BASE 0x101060
+#define CUSTOM_COUNTER_COMPONENT_1_IRQ 4
+#define CUSTOM_COUNTER_COMPONENT_1_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define CUSTOM_COUNTER_COMPONENT_1_NAME "/dev/custom_counter_component_1"
+#define CUSTOM_COUNTER_COMPONENT_1_SPAN 16
+#define CUSTOM_COUNTER_COMPONENT_1_TYPE "custom_counter_component"
+
+
+/*
  * hal configuration
  *
  */
@@ -331,7 +345,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x101060
+#define JTAG_UART_0_BASE 0x101070
 #define JTAG_UART_0_IRQ 0
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"

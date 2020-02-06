@@ -42,7 +42,7 @@ int main()
 	IOWR(SEVEN_SEGMENT_N_O_0_BASE, 0, 0x40);
 		
 	while (1){
-
+		plan.hold_1 = PB_timer.hold;
 		if((plan.initial == 0) && (((floor_list[0] != 13)) ||((floor_list[0] == 13) && (load == 0)))) {
 			if(load == 1) {
 				load_counter_config(&PB_timer.elevator_move);
@@ -51,22 +51,25 @@ int main()
 				floor_list[0] = 13;
 			}
 
-			if ((plan.state == 1) && (read_counter_interrupt() == 1) && (PB_timer.hold == 0)){
-					reset_counter();
-					elevator(&plan);
-
+			if ((plan.state == 1) && (read_move_interrupt() == 1) && (PB_timer.hold == 0)&& (read_door_interrupt() == 1)) {
+				reset_move_counter();
+				elevator(&plan);
 			}
-			else if (plan.cur_floor == plan.des_floor){
+			else if(plan.cur_floor == plan.des_floor){
 				if (load == 0){
 					load = 1;
-					load_counter_config(&PB_timer.door_open);
+					load_door_config(&PB_timer.door_open);
 				}
-				reset_counter();
-				opendoor(&plan, &PB_timer);
+				printf("Door open \n");
+				//plan.state = 0;
 				plan.led = IORD(LED_RED_O_BASE, 0);
 				plan.led = plan.led & (~(1 << plan.des_floor));
 				IOWR(LED_RED_O_BASE, 0, plan.led);
-				printf("current floor = %d, destination floor= %d, direction = %d \n", plan.des_floor, plan.cur_floor, plan.direction);
+
+				reset_door_counter();
+				opendoor(&plan, &PB_timer);
+
+				//printf("current floor = %d, destination floor= %d, direction = %d \n", plan.cur_floor, plan.des_floor, plan.direction);
 				FindNext(&floor_list, &plan);
 			}
 		}
@@ -74,22 +77,26 @@ int main()
 			if(load == 1) {
 				load = 0;
 			}
-			if ((plan.state == 1) && (read_counter_interrupt() == 1) && (PB_timer.hold == 0)){
-					reset_counter();
-					elevator(&plan);
+			if ((plan.state == 1) && (read_move_interrupt() == 1) && (PB_timer.hold == 0) && (read_door_interrupt() == 1)) {
+				reset_move_counter();
+				elevator(&plan);
+				//printf("current floor = %d, destination floor= %d, direction = %d \n", plan.cur_floor, plan.des_floor, plan.direction);
 			}
 			else if (plan.cur_floor == plan.des_floor){
 				if (load == 0){
 					load = 1;
 				}
-				reset_counter();
-				opendoor(&plan, &PB_timer);
+				//plan.state = 0;
+				printf("Door open \n");
 				plan.led = IORD(LED_RED_O_BASE, 0);
 				plan.led = plan.led & (~(1 << plan.des_floor));
 				IOWR(LED_RED_O_BASE, 0, plan.led);
-				printf("current floor = %d, destination floor = %d, direction = %d \n", plan.des_floor, plan.cur_floor, plan.direction);\
-				FindNext(&floor_list, &plan);
 
+				reset_door_counter();
+				opendoor(&plan, &PB_timer);
+
+				//printf("current floor = %d, destination floor = %d, direction = %d \n", plan.cur_floor, plan.des_floor, plan.direction);
+				FindNext(&floor_list, &plan);
 			}
 		}
 	}

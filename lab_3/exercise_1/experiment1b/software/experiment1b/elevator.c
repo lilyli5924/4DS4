@@ -77,14 +77,14 @@ void FindNext(int* array,floor_P *floor){
 
 void elevator(floor_P * floor){
 	IOWR(CUSTOM_COUNTER_COMPONENT_0_BASE, 2, 0);
-	alt_irq_register(CUSTOM_COUNTER_COMPONENT_0_IRQ, (void*)floor, (void*)handle_counter_expire_interrupts);
-	floor->state = 1;
+
+	alt_irq_register(CUSTOM_COUNTER_COMPONENT_0_IRQ, (void*)floor, (void*)handle_move_expire_interrupts );
 }
 
 void opendoor(floor_P* floor, counter *PB_timer){
-	IOWR(CUSTOM_COUNTER_COMPONENT_0_BASE, 2, 0);
-	alt_irq_register(CUSTOM_COUNTER_COMPONENT_0_IRQ, (void*)floor, (void*)handle_counter_expire_interrupts );
-	floor->state = 0;
-	printf("OPEN DOOR \n");
+	//floor->state = 0;
+	IOWR(CUSTOM_COUNTER_COMPONENT_1_BASE, 2, 0);
+	alt_irq_register(CUSTOM_COUNTER_COMPONENT_1_IRQ, (void*)floor, (void*)handle_door_expire_interrupts );
+	//floor->state = 1;
 
 }

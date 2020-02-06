@@ -28,6 +28,8 @@ void KEY3_Pressed(int *hold) {
 	*hold = button_3;
 	if(button_3 == 1){
 		printf("You are holding the door \n");
+	} else {
+		reset_door_counter();
 	}
 }
 
