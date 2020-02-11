@@ -225,7 +225,7 @@ logic [13:0] Filter_calc_2aa;
 logic [13:0] Filter_calc_2ab;
 logic [13:0] Filter_calc_2ac;
 logic [17:0] Filter_calc_2a;
-logic [7:0] 	;
+logic [7:0] Filter_calc_2b;
 
 assign C_m1_m1 = $signed(Filter_config_5[31:24]);
 assign C_m1_0 = $signed(Filter_config_5[23:16]);
@@ -267,14 +267,14 @@ assign Filter_calc_2a = $signed(Filter_calc_2aa) + $signed(Filter_calc_2ab) + $s
 
 always_comb begin
 	if ($signed(Filter_calc_2a) < $signed(threshold_n))
-			= 8'd255;
+		Filter_calc_2b = 8'd255;
 	else 
-																				= 8'd0;
+		Filter_calc_2b = 8'd0;
 
 	if ($signed(Filter_calc_2a) > $signed(threshold_p))
-			= 8'd255;
+		Filter_calc_2b = 8'd255;
 	else
-			= 8'd0;
+		Filter_calc_2b = 8'd0;
 end
 
 
@@ -389,9 +389,9 @@ always_ff @(posedge Clock or negedge Resetn) begin
 				Blue_wrdata_1a <= Filter_calc_1b;
 			end
 			3'd5 : begin
-				Red_wrdata_1a <= 	;
-				Green_wrdata_1a <= 	;
-				Blue_wrdata_1a <= 	;
+				Red_wrdata_1a <= Filter_calc_2b;
+				Green_wrdata_1a <= Filter_calc_2b;
+				Blue_wrdata_1a <= Filter_calc_2b;
 			end
 		endcase
 	end
