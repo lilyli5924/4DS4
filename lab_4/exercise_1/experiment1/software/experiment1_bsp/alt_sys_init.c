@@ -2,9 +2,9 @@
  * alt_sys_init.c - HAL initialization source
  *
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'experiment1'
- * SOPC Builder design path: C:/Users/ts/COE4DS4/coe4ds4_lab5_2020/experiment1/experiment1.sopcinfo
+ * SOPC Builder design path: ../../experiment1.sopcinfo
  *
- * Generated: Thu Feb 06 08:06:39 EST 2020
+ * Generated: Tue Oct 30 19:08:10 EDT 2012
  */
 
 /*

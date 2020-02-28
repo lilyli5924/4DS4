@@ -1,9 +1,9 @@
 # memory.gdb - GDB memory region definitions
 #
 # Machine generated for CPU 'cpu_0' in SOPC Builder design 'experiment1'
-# SOPC Builder design path: C:/Users/ts/COE4DS4/coe4ds4_lab5_2020/experiment1/experiment1.sopcinfo
+# SOPC Builder design path: ../../experiment1.sopcinfo
 #
-# Generated: Thu Feb 06 08:06:39 EST 2020
+# Generated: Tue Oct 30 19:08:10 EDT 2012
 
 # DO NOT MODIFY THIS FILE
 #
@@ -46,5 +46,14 @@
 # The cache attribute is specified which improves GDB performance
 # by allowing GDB to cache memory contents on the host.
 
-# onchip_memory2_0
-memory 0x20000 0x40000 cache
+# sram_0
+memory 0x80000 0x100000 cache
+
+# Nios_LCD_Component_0_Console
+memory 0x100000 0x102000 cache
+
+# Nios_LCD_Component_0_Image
+memory 0x103000 0x103040 cache
+
+# Nios_LCD_Component_0_Touchpanel
+memory 0x103040 0x103080 cache

@@ -5,7 +5,7 @@
 BSP_TYPE=hal
 BSP_DIR=.
 SOPC_DIR=../../
-SOPC_FILE=C:/Users/ts/COE4DS4/coe4ds4_lab5_2020/experiment1/experiment1.sopcinfo
+SOPC_FILE=../../experiment1.sopcinfo
 NIOS2_BSP_ARGS=""
 CPU_NAME=
 

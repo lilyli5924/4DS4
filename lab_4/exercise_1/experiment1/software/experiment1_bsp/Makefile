@@ -101,7 +101,7 @@ ACDS_VERSION := 12.0sp2
 # BUILD_NUMBER: 263
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := C:/Users/ts/COE4DS4/coe4ds4_lab5_2020/experiment1/experiment1.sopcinfo
+SOPC_FILE := ../../experiment1.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS
@@ -219,10 +219,6 @@ altera_avalon_jtag_uart_driver_C_LIB_SRCS := \
 	$(altera_avalon_jtag_uart_driver_SRCS_ROOT)/src/altera_avalon_jtag_uart_ioctl.c \
 	$(altera_avalon_jtag_uart_driver_SRCS_ROOT)/src/altera_avalon_jtag_uart_fd.c
 
-# altera_avalon_pio_driver sources root 
-altera_avalon_pio_driver_SRCS_ROOT := drivers
-
-# altera_avalon_pio_driver sources 
 # altera_nios2_qsys_hal_driver sources root 
 altera_nios2_qsys_hal_driver_SRCS_ROOT := HAL
 

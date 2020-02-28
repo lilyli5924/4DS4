@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'experiment1'
- * SOPC Builder design path: C:/Users/ts/COE4DS4/coe4ds4_lab5_2020/experiment1/experiment1.sopcinfo
+ * SOPC Builder design path: ../../experiment1.sopcinfo
  *
- * Generated: Thu Feb 06 08:06:39 EST 2020
+ * Generated: Tue Oct 30 19:08:10 EDT 2012
  */
 
 /*
@@ -62,16 +62,16 @@
 
 #define ALT_CPU_ARCHITECTURE "altera_nios2_qsys"
 #define ALT_CPU_BIG_ENDIAN 0
-#define ALT_CPU_BREAK_ADDR 0x40820
+#define ALT_CPU_BREAK_ADDR 0x102820
 #define ALT_CPU_CPU_FREQ 50000000u
 #define ALT_CPU_CPU_ID_SIZE 1
 #define ALT_CPU_CPU_ID_VALUE 0x00000000
 #define ALT_CPU_CPU_IMPLEMENTATION "tiny"
-#define ALT_CPU_DATA_ADDR_WIDTH 0x13
+#define ALT_CPU_DATA_ADDR_WIDTH 0x15
 #define ALT_CPU_DCACHE_LINE_SIZE 0
 #define ALT_CPU_DCACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_DCACHE_SIZE 0
-#define ALT_CPU_EXCEPTION_ADDR 0x20020
+#define ALT_CPU_EXCEPTION_ADDR 0x80020
 #define ALT_CPU_FLUSHDA_SUPPORTED
 #define ALT_CPU_FREQ 50000000
 #define ALT_CPU_HARDWARE_DIVIDE_PRESENT 0
@@ -83,9 +83,9 @@
 #define ALT_CPU_ICACHE_LINE_SIZE 0
 #define ALT_CPU_ICACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_ICACHE_SIZE 0
-#define ALT_CPU_INST_ADDR_WIDTH 0x13
+#define ALT_CPU_INST_ADDR_WIDTH 0x15
 #define ALT_CPU_NAME "cpu_0"
-#define ALT_CPU_RESET_ADDR 0x20000
+#define ALT_CPU_RESET_ADDR 0x80000
 
 
 /*
@@ -94,16 +94,16 @@
  */
 
 #define NIOS2_BIG_ENDIAN 0
-#define NIOS2_BREAK_ADDR 0x40820
+#define NIOS2_BREAK_ADDR 0x102820
 #define NIOS2_CPU_FREQ 50000000u
 #define NIOS2_CPU_ID_SIZE 1
 #define NIOS2_CPU_ID_VALUE 0x00000000
 #define NIOS2_CPU_IMPLEMENTATION "tiny"
-#define NIOS2_DATA_ADDR_WIDTH 0x13
+#define NIOS2_DATA_ADDR_WIDTH 0x15
 #define NIOS2_DCACHE_LINE_SIZE 0
 #define NIOS2_DCACHE_LINE_SIZE_LOG2 0
 #define NIOS2_DCACHE_SIZE 0
-#define NIOS2_EXCEPTION_ADDR 0x20020
+#define NIOS2_EXCEPTION_ADDR 0x80020
 #define NIOS2_FLUSHDA_SUPPORTED
 #define NIOS2_HARDWARE_DIVIDE_PRESENT 0
 #define NIOS2_HARDWARE_MULTIPLY_PRESENT 0
@@ -114,8 +114,8 @@
 #define NIOS2_ICACHE_LINE_SIZE 0
 #define NIOS2_ICACHE_LINE_SIZE_LOG2 0
 #define NIOS2_ICACHE_SIZE 0
-#define NIOS2_INST_ADDR_WIDTH 0x13
-#define NIOS2_RESET_ADDR 0x20000
+#define NIOS2_INST_ADDR_WIDTH 0x15
+#define NIOS2_RESET_ADDR 0x80000
 
 
 /*
@@ -124,118 +124,51 @@
  */
 
 #define __ALTERA_AVALON_JTAG_UART
-#define __ALTERA_AVALON_ONCHIP_MEMORY2
-#define __ALTERA_AVALON_PIO
 #define __ALTERA_NIOS2_QSYS
-#define __CUSTOM_COUNTER_COMPONENT
+#define __ALTERA_UP_AVALON_SRAM
+#define __NIOS_LCD_COMPONENT
 
 
 /*
- * LED_GREEN_O configuration
+ * Nios_LCD_Component_0_Console configuration
  *
  */
 
-#define ALT_MODULE_CLASS_LED_GREEN_O altera_avalon_pio
-#define LED_GREEN_O_BASE 0x41010
-#define LED_GREEN_O_BIT_CLEARING_EDGE_REGISTER 0
-#define LED_GREEN_O_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define LED_GREEN_O_CAPTURE 0
-#define LED_GREEN_O_DATA_WIDTH 9
-#define LED_GREEN_O_DO_TEST_BENCH_WIRING 0
-#define LED_GREEN_O_DRIVEN_SIM_VALUE 0x0
-#define LED_GREEN_O_EDGE_TYPE "NONE"
-#define LED_GREEN_O_FREQ 50000000u
-#define LED_GREEN_O_HAS_IN 0
-#define LED_GREEN_O_HAS_OUT 1
-#define LED_GREEN_O_HAS_TRI 0
-#define LED_GREEN_O_IRQ -1
-#define LED_GREEN_O_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define LED_GREEN_O_IRQ_TYPE "NONE"
-#define LED_GREEN_O_NAME "/dev/LED_GREEN_O"
-#define LED_GREEN_O_RESET_VALUE 0x0
-#define LED_GREEN_O_SPAN 16
-#define LED_GREEN_O_TYPE "altera_avalon_pio"
+#define ALT_MODULE_CLASS_Nios_LCD_Component_0_Console Nios_LCD_Component
+#define NIOS_LCD_COMPONENT_0_CONSOLE_BASE 0x100000
+#define NIOS_LCD_COMPONENT_0_CONSOLE_IRQ -1
+#define NIOS_LCD_COMPONENT_0_CONSOLE_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define NIOS_LCD_COMPONENT_0_CONSOLE_NAME "/dev/Nios_LCD_Component_0_Console"
+#define NIOS_LCD_COMPONENT_0_CONSOLE_SPAN 8192
+#define NIOS_LCD_COMPONENT_0_CONSOLE_TYPE "Nios_LCD_Component"
 
 
 /*
- * LED_RED_O configuration
+ * Nios_LCD_Component_0_Image configuration
  *
  */
 
-#define ALT_MODULE_CLASS_LED_RED_O altera_avalon_pio
-#define LED_RED_O_BASE 0x41020
-#define LED_RED_O_BIT_CLEARING_EDGE_REGISTER 0
-#define LED_RED_O_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define LED_RED_O_CAPTURE 0
-#define LED_RED_O_DATA_WIDTH 18
-#define LED_RED_O_DO_TEST_BENCH_WIRING 0
-#define LED_RED_O_DRIVEN_SIM_VALUE 0x0
-#define LED_RED_O_EDGE_TYPE "NONE"
-#define LED_RED_O_FREQ 50000000u
-#define LED_RED_O_HAS_IN 0
-#define LED_RED_O_HAS_OUT 1
-#define LED_RED_O_HAS_TRI 0
-#define LED_RED_O_IRQ -1
-#define LED_RED_O_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define LED_RED_O_IRQ_TYPE "NONE"
-#define LED_RED_O_NAME "/dev/LED_RED_O"
-#define LED_RED_O_RESET_VALUE 0x0
-#define LED_RED_O_SPAN 16
-#define LED_RED_O_TYPE "altera_avalon_pio"
+#define ALT_MODULE_CLASS_Nios_LCD_Component_0_Image Nios_LCD_Component
+#define NIOS_LCD_COMPONENT_0_IMAGE_BASE 0x103000
+#define NIOS_LCD_COMPONENT_0_IMAGE_IRQ -1
+#define NIOS_LCD_COMPONENT_0_IMAGE_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define NIOS_LCD_COMPONENT_0_IMAGE_NAME "/dev/Nios_LCD_Component_0_Image"
+#define NIOS_LCD_COMPONENT_0_IMAGE_SPAN 64
+#define NIOS_LCD_COMPONENT_0_IMAGE_TYPE "Nios_LCD_Component"
 
 
 /*
- * PUSH_BUTTON_I configuration
+ * Nios_LCD_Component_0_Touchpanel configuration
  *
  */
 
-#define ALT_MODULE_CLASS_PUSH_BUTTON_I altera_avalon_pio
-#define PUSH_BUTTON_I_BASE 0x41030
-#define PUSH_BUTTON_I_BIT_CLEARING_EDGE_REGISTER 0
-#define PUSH_BUTTON_I_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PUSH_BUTTON_I_CAPTURE 1
-#define PUSH_BUTTON_I_DATA_WIDTH 4
-#define PUSH_BUTTON_I_DO_TEST_BENCH_WIRING 0
-#define PUSH_BUTTON_I_DRIVEN_SIM_VALUE 0x0
-#define PUSH_BUTTON_I_EDGE_TYPE "RISING"
-#define PUSH_BUTTON_I_FREQ 50000000u
-#define PUSH_BUTTON_I_HAS_IN 1
-#define PUSH_BUTTON_I_HAS_OUT 0
-#define PUSH_BUTTON_I_HAS_TRI 0
-#define PUSH_BUTTON_I_IRQ 0
-#define PUSH_BUTTON_I_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define PUSH_BUTTON_I_IRQ_TYPE "EDGE"
-#define PUSH_BUTTON_I_NAME "/dev/PUSH_BUTTON_I"
-#define PUSH_BUTTON_I_RESET_VALUE 0x0
-#define PUSH_BUTTON_I_SPAN 16
-#define PUSH_BUTTON_I_TYPE "altera_avalon_pio"
-
-
-/*
- * SWITCH_I configuration
- *
- */
-
-#define ALT_MODULE_CLASS_SWITCH_I altera_avalon_pio
-#define SWITCH_I_BASE 0x41040
-#define SWITCH_I_BIT_CLEARING_EDGE_REGISTER 0
-#define SWITCH_I_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define SWITCH_I_CAPTURE 0
-#define SWITCH_I_DATA_WIDTH 17
-#define SWITCH_I_DO_TEST_BENCH_WIRING 0
-#define SWITCH_I_DRIVEN_SIM_VALUE 0x0
-#define SWITCH_I_EDGE_TYPE "NONE"
-#define SWITCH_I_FREQ 50000000u
-#define SWITCH_I_HAS_IN 1
-#define SWITCH_I_HAS_OUT 0
-#define SWITCH_I_HAS_TRI 0
-#define SWITCH_I_IRQ -1
-#define SWITCH_I_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define SWITCH_I_IRQ_TYPE "NONE"
-#define SWITCH_I_NAME "/dev/SWITCH_I"
-#define SWITCH_I_RESET_VALUE 0x0
-#define SWITCH_I_SPAN 16
-#define SWITCH_I_TYPE "altera_avalon_pio"
+#define ALT_MODULE_CLASS_Nios_LCD_Component_0_Touchpanel Nios_LCD_Component
+#define NIOS_LCD_COMPONENT_0_TOUCHPANEL_BASE 0x103040
+#define NIOS_LCD_COMPONENT_0_TOUCHPANEL_IRQ 1
+#define NIOS_LCD_COMPONENT_0_TOUCHPANEL_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define NIOS_LCD_COMPONENT_0_TOUCHPANEL_NAME "/dev/Nios_LCD_Component_0_Touchpanel"
+#define NIOS_LCD_COMPONENT_0_TOUCHPANEL_SPAN 64
+#define NIOS_LCD_COMPONENT_0_TOUCHPANEL_TYPE "Nios_LCD_Component"
 
 
 /*
@@ -254,38 +187,24 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x41050
+#define ALT_STDERR_BASE 0x103080
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x41050
+#define ALT_STDIN_BASE 0x103080
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x41050
+#define ALT_STDOUT_BASE 0x103080
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
 #define ALT_STDOUT_TYPE "altera_avalon_jtag_uart"
 #define ALT_SYSTEM_NAME "experiment1"
-
-
-/*
- * custom_counter_component_0 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_custom_counter_component_0 custom_counter_component
-#define CUSTOM_COUNTER_COMPONENT_0_BASE 0x41000
-#define CUSTOM_COUNTER_COMPONENT_0_IRQ 2
-#define CUSTOM_COUNTER_COMPONENT_0_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define CUSTOM_COUNTER_COMPONENT_0_NAME "/dev/custom_counter_component_0"
-#define CUSTOM_COUNTER_COMPONENT_0_SPAN 16
-#define CUSTOM_COUNTER_COMPONENT_0_TYPE "custom_counter_component"
 
 
 /*
@@ -304,8 +223,8 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x41050
-#define JTAG_UART_0_IRQ 1
+#define JTAG_UART_0_BASE 0x103080
+#define JTAG_UART_0_IRQ 0
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
 #define JTAG_UART_0_READ_DEPTH 64
@@ -317,31 +236,16 @@
 
 
 /*
- * onchip_memory2_0 configuration
+ * sram_0 configuration
  *
  */
 
-#define ALT_MODULE_CLASS_onchip_memory2_0 altera_avalon_onchip_memory2
-#define ONCHIP_MEMORY2_0_ALLOW_IN_SYSTEM_MEMORY_CONTENT_EDITOR 0
-#define ONCHIP_MEMORY2_0_ALLOW_MRAM_SIM_CONTENTS_ONLY_FILE 0
-#define ONCHIP_MEMORY2_0_BASE 0x20000
-#define ONCHIP_MEMORY2_0_CONTENTS_INFO ""
-#define ONCHIP_MEMORY2_0_DUAL_PORT 0
-#define ONCHIP_MEMORY2_0_GUI_RAM_BLOCK_TYPE "Automatic"
-#define ONCHIP_MEMORY2_0_INIT_CONTENTS_FILE "onchip_memory2_0"
-#define ONCHIP_MEMORY2_0_INIT_MEM_CONTENT 1
-#define ONCHIP_MEMORY2_0_INSTANCE_ID "NONE"
-#define ONCHIP_MEMORY2_0_IRQ -1
-#define ONCHIP_MEMORY2_0_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define ONCHIP_MEMORY2_0_NAME "/dev/onchip_memory2_0"
-#define ONCHIP_MEMORY2_0_NON_DEFAULT_INIT_FILE_ENABLED 0
-#define ONCHIP_MEMORY2_0_RAM_BLOCK_TYPE "Auto"
-#define ONCHIP_MEMORY2_0_READ_DURING_WRITE_MODE "DONT_CARE"
-#define ONCHIP_MEMORY2_0_SINGLE_CLOCK_OP 0
-#define ONCHIP_MEMORY2_0_SIZE_MULTIPLE 1
-#define ONCHIP_MEMORY2_0_SIZE_VALUE 131072u
-#define ONCHIP_MEMORY2_0_SPAN 131072
-#define ONCHIP_MEMORY2_0_TYPE "altera_avalon_onchip_memory2"
-#define ONCHIP_MEMORY2_0_WRITABLE 1
+#define ALT_MODULE_CLASS_sram_0 altera_up_avalon_sram
+#define SRAM_0_BASE 0x80000
+#define SRAM_0_IRQ -1
+#define SRAM_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define SRAM_0_NAME "/dev/sram_0"
+#define SRAM_0_SPAN 524288
+#define SRAM_0_TYPE "altera_up_avalon_sram"
 
 #endif /* __SYSTEM_H_ */

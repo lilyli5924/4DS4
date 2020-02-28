@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>6-Feb-2020 8:08:35 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1580994515670</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\ts\COE4DS4\coe4ds4_lab5_2020\experiment1\software\experiment1_bsp</BspGeneratedLocation>
-        <BspSettingsFile>settings.bsp</BspSettingsFile>
-        <SopcDesignFile>..\..\experiment1.sopcinfo</SopcDesignFile>
+        <BspGeneratedTimeStamp>Oct 30, 2012 7:08:10 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1351638490193</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>/root/Desktop/2013_dev/coe4ds4_lab4_2013/experiment1/software/experiment1_bsp</BspGeneratedLocation>
+        <BspSettingsFile>./settings.bsp</BspSettingsFile>
+        <SopcDesignFile>../../experiment1.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu_0</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
@@ -146,7 +146,7 @@
                 <SettingName>hal.linker.exception_stack_memory_region_name</SettingName>
                 <Identifier>NONE</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>onchip_memory2_0</Value>
+                <Value>sram_0</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Name of the existing memory region that will be divided up to create the 'exception_stack' memory region. The selected region name will be adjusted automatically when the BSP is generated to create the 'exception_stack' memory region.</Description>
@@ -182,7 +182,7 @@
                 <SettingName>hal.linker.interrupt_stack_memory_region_name</SettingName>
                 <Identifier>NONE</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>onchip_memory2_0</Value>
+                <Value>sram_0</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Name of the existing memory region that will be divided up to create the 'interrupt_stack' memory region. The selected region name will be adjusted automatically when the BSP is generated to create the 'interrupt_stack' memory region.</Description>
@@ -794,7 +794,7 @@
                 <SettingName>hal.enable_sim_optimize</SettingName>
                 <Identifier>ALT_SIM_OPTIMIZE</Identifier>
                 <Type>Boolean</Type>
-                <Value>1</Value>
+                <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>The BSP is compiled with optimizations to speedup HDL simulation such as initializing the cache, clearing the .bss section, and skipping long delay loops. If true, adds -DALT_SIM_OPTIMIZE to ALT_CPPFLAGS in public.mk.</Description>
@@ -851,69 +851,57 @@
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <MemoryMap>
-                <slaveDescriptor>onchip_memory2_0</slaveDescriptor>
-                <addressRange>0x00020000 - 0x0003FFFF</addressRange>
-                <addressSpan>131072</addressSpan>
+                <slaveDescriptor>sram_0</slaveDescriptor>
+                <addressRange>0x00080000 - 0x000FFFFF</addressRange>
+                <addressSpan>524288</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>custom_counter_component_0</slaveDescriptor>
-                <addressRange>0x00041000 - 0x0004100F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
+                <slaveDescriptor>Nios_LCD_Component_0_Console</slaveDescriptor>
+                <addressRange>0x00100000 - 0x00101FFF</addressRange>
+                <addressSpan>8192</addressSpan>
+                <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>LED_GREEN_O</slaveDescriptor>
-                <addressRange>0x00041010 - 0x0004101F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
+                <slaveDescriptor>Nios_LCD_Component_0_Image</slaveDescriptor>
+                <addressRange>0x00103000 - 0x0010303F</addressRange>
+                <addressSpan>64</addressSpan>
+                <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>LED_RED_O</slaveDescriptor>
-                <addressRange>0x00041020 - 0x0004102F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>PUSH_BUTTON_I</slaveDescriptor>
-                <addressRange>0x00041030 - 0x0004103F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>SWITCH_I</slaveDescriptor>
-                <addressRange>0x00041040 - 0x0004104F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
+                <slaveDescriptor>Nios_LCD_Component_0_Touchpanel</slaveDescriptor>
+                <addressRange>0x00103040 - 0x0010307F</addressRange>
+                <addressSpan>64</addressSpan>
+                <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x00041050 - 0x00041057</addressRange>
+                <addressRange>0x00103080 - 0x00103087</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <LinkerSection>
                 <sectionName>.text</sectionName>
-                <regionName>onchip_memory2_0</regionName>
+                <regionName>sram_0</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.rodata</sectionName>
-                <regionName>onchip_memory2_0</regionName>
+                <regionName>sram_0</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.rwdata</sectionName>
-                <regionName>onchip_memory2_0</regionName>
+                <regionName>sram_0</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.bss</sectionName>
-                <regionName>onchip_memory2_0</regionName>
+                <regionName>sram_0</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.heap</sectionName>
-                <regionName>onchip_memory2_0</regionName>
+                <regionName>sram_0</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.stack</sectionName>
-                <regionName>onchip_memory2_0</regionName>
+                <regionName>sram_0</regionName>
         </LinkerSection>
 </sch:Settings>

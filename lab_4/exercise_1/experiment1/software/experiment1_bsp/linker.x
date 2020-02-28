@@ -2,9 +2,9 @@
  * linker.x - Linker script
  *
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'experiment1'
- * SOPC Builder design path: C:/Users/ts/COE4DS4/coe4ds4_lab5_2020/experiment1/experiment1.sopcinfo
+ * SOPC Builder design path: ../../experiment1.sopcinfo
  *
- * Generated: Thu Feb 06 08:06:39 EST 2020
+ * Generated: Tue Oct 30 19:08:10 EDT 2012
  */
 
 /*
@@ -50,12 +50,18 @@
 
 MEMORY
 {
-    reset : ORIGIN = 0x20000, LENGTH = 32
-    onchip_memory2_0 : ORIGIN = 0x20020, LENGTH = 131040
+    reset : ORIGIN = 0x80000, LENGTH = 32
+    sram_0 : ORIGIN = 0x80020, LENGTH = 524256
+    Nios_LCD_Component_0_Console : ORIGIN = 0x100000, LENGTH = 8192
+    Nios_LCD_Component_0_Image : ORIGIN = 0x103000, LENGTH = 64
+    Nios_LCD_Component_0_Touchpanel : ORIGIN = 0x103040, LENGTH = 64
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_onchip_memory2_0 = 0x20000;
+__alt_mem_sram_0 = 0x80000;
+__alt_mem_Nios_LCD_Component_0_Console = 0x100000;
+__alt_mem_Nios_LCD_Component_0_Image = 0x103000;
+__alt_mem_Nios_LCD_Component_0_Touchpanel = 0x103040;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -110,7 +116,7 @@ SECTIONS
         KEEP (*(.exceptions.exit));
         KEEP (*(.exceptions));
         PROVIDE (__ram_exceptions_end = ABSOLUTE(.));
-    } > onchip_memory2_0
+    } > sram_0
 
     PROVIDE (__flash_exceptions_start = LOADADDR(.exceptions));
 
@@ -206,7 +212,7 @@ SECTIONS
         PROVIDE (__DTOR_END__ = ABSOLUTE(.));
         KEEP (*(.jcr))
         . = ALIGN(4);
-    } > onchip_memory2_0 = 0x3a880100 /* Nios II NOP instruction */
+    } > sram_0 = 0x3a880100 /* Nios II NOP instruction */
 
     .rodata :
     {
@@ -216,7 +222,7 @@ SECTIONS
         *(.rodata1)
         . = ALIGN(4);
         PROVIDE (__ram_rodata_end = ABSOLUTE(.));
-    } > onchip_memory2_0
+    } > sram_0
 
     PROVIDE (__flash_rodata_start = LOADADDR(.rodata));
 
@@ -250,7 +256,7 @@ SECTIONS
         _edata = ABSOLUTE(.);
         PROVIDE (edata = ABSOLUTE(.));
         PROVIDE (__ram_rwdata_end = ABSOLUTE(.));
-    } > onchip_memory2_0
+    } > sram_0
 
     PROVIDE (__flash_rwdata_start = LOADADDR(.rwdata));
 
@@ -281,7 +287,7 @@ SECTIONS
 
         . = ALIGN(4);
         __bss_end = ABSOLUTE(.);
-    } > onchip_memory2_0
+    } > sram_0
 
     /*
      *
@@ -306,18 +312,69 @@ SECTIONS
      *
      */
 
-    .onchip_memory2_0 LOADADDR (.bss) + SIZEOF (.bss) : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
+    .sram_0 LOADADDR (.bss) + SIZEOF (.bss) : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
     {
-        PROVIDE (_alt_partition_onchip_memory2_0_start = ABSOLUTE(.));
-        *(.onchip_memory2_0. onchip_memory2_0.*)
+        PROVIDE (_alt_partition_sram_0_start = ABSOLUTE(.));
+        *(.sram_0. sram_0.*)
         . = ALIGN(4);
-        PROVIDE (_alt_partition_onchip_memory2_0_end = ABSOLUTE(.));
+        PROVIDE (_alt_partition_sram_0_end = ABSOLUTE(.));
         _end = ABSOLUTE(.);
         end = ABSOLUTE(.);
         __alt_stack_base = ABSOLUTE(.);
-    } > onchip_memory2_0
+    } > sram_0
 
-    PROVIDE (_alt_partition_onchip_memory2_0_load_addr = LOADADDR(.onchip_memory2_0));
+    PROVIDE (_alt_partition_sram_0_load_addr = LOADADDR(.sram_0));
+
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .Nios_LCD_Component_0_Console : AT ( LOADADDR (.sram_0) + SIZEOF (.sram_0) )
+    {
+        PROVIDE (_alt_partition_Nios_LCD_Component_0_Console_start = ABSOLUTE(.));
+        *(.Nios_LCD_Component_0_Console. Nios_LCD_Component_0_Console.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_Nios_LCD_Component_0_Console_end = ABSOLUTE(.));
+    } > Nios_LCD_Component_0_Console
+
+    PROVIDE (_alt_partition_Nios_LCD_Component_0_Console_load_addr = LOADADDR(.Nios_LCD_Component_0_Console));
+
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .Nios_LCD_Component_0_Image : AT ( LOADADDR (.Nios_LCD_Component_0_Console) + SIZEOF (.Nios_LCD_Component_0_Console) )
+    {
+        PROVIDE (_alt_partition_Nios_LCD_Component_0_Image_start = ABSOLUTE(.));
+        *(.Nios_LCD_Component_0_Image. Nios_LCD_Component_0_Image.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_Nios_LCD_Component_0_Image_end = ABSOLUTE(.));
+    } > Nios_LCD_Component_0_Image
+
+    PROVIDE (_alt_partition_Nios_LCD_Component_0_Image_load_addr = LOADADDR(.Nios_LCD_Component_0_Image));
+
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .Nios_LCD_Component_0_Touchpanel : AT ( LOADADDR (.Nios_LCD_Component_0_Image) + SIZEOF (.Nios_LCD_Component_0_Image) )
+    {
+        PROVIDE (_alt_partition_Nios_LCD_Component_0_Touchpanel_start = ABSOLUTE(.));
+        *(.Nios_LCD_Component_0_Touchpanel. Nios_LCD_Component_0_Touchpanel.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_Nios_LCD_Component_0_Touchpanel_end = ABSOLUTE(.));
+    } > Nios_LCD_Component_0_Touchpanel
+
+    PROVIDE (_alt_partition_Nios_LCD_Component_0_Touchpanel_load_addr = LOADADDR(.Nios_LCD_Component_0_Touchpanel));
 
     /*
      * Stabs debugging sections.
@@ -366,7 +423,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0x40000;
+__alt_data_end = 0x100000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -382,4 +439,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0x40000 );
+PROVIDE( __alt_heap_limit    = 0x100000 );

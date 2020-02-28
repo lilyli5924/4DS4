@@ -7,7 +7,7 @@
 <td width="20%" bgcolor="#77BBFF">BSP Type:</td><td>hal</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">SOPC Design File:</td><td>C:\Users\ts\COE4DS4\coe4ds4_lab5_2020\experiment1\experiment1.sopcinfo</td>
+<td width="20%" bgcolor="#77BBFF">SOPC Design File:</td><td>../../experiment1.sopcinfo</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">Quartus JDI File:</td><td>default</td>
@@ -16,19 +16,19 @@
 <td width="20%" bgcolor="#77BBFF">CPU:</td><td>cpu_0</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Settings File:</td><td>settings.bsp</td>
+<td width="20%" bgcolor="#77BBFF">BSP Settings File:</td><td>./settings.bsp</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>6-Feb-2020 8:08:35 AM</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>Oct 30, 2012 7:08:10 PM</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1580994515670</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1351638490193</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>C:\Users\ts\COE4DS4\coe4ds4_lab5_2020\experiment1\software\experiment1_bsp</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>/root/Desktop/2013_dev/coe4ds4_lab4_2013/experiment1/software/experiment1_bsp</td>
 </tr>
 </table>
 <br>
@@ -38,25 +38,19 @@
 <th align="left" width="20%">Slave Descriptor</th><th align="left" width="40%">Address Range</th><th align="left" width="20%">Size</th><th align="left" width="20%">Attributes</th>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>jtag_uart_0</td><td>0x00041050 - 0x00041057</td><td>8</td><td class="listing">printable</td>
+<td>jtag_uart_0</td><td>0x00103080 - 0x00103087</td><td>8</td><td class="listing">printable</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>SWITCH_I</td><td>0x00041040 - 0x0004104F</td><td>16</td><td class="listing">&nbsp;</td>
+<td>Nios_LCD_Component_0_Touchpanel</td><td>0x00103040 - 0x0010307F</td><td>64</td><td class="listing">memory</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>PUSH_BUTTON_I</td><td>0x00041030 - 0x0004103F</td><td>16</td><td class="listing">&nbsp;</td>
+<td>Nios_LCD_Component_0_Image</td><td>0x00103000 - 0x0010303F</td><td>64</td><td class="listing">memory</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>LED_RED_O</td><td>0x00041020 - 0x0004102F</td><td>16</td><td class="listing">&nbsp;</td>
+<td>Nios_LCD_Component_0_Console</td><td>0x00100000 - 0x00101FFF</td><td>8192</td><td class="listing">memory</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>LED_GREEN_O</td><td>0x00041010 - 0x0004101F</td><td>16</td><td class="listing">&nbsp;</td>
-</tr>
-<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>custom_counter_component_0</td><td>0x00041000 - 0x0004100F</td><td>16</td><td class="listing">&nbsp;</td>
-</tr>
-<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>onchip_memory2_0</td><td>0x00020000 - 0x0003FFFF</td><td>131072</td><td class="listing">memory</td>
+<td>sram_0</td><td>0x00080000 - 0x000FFFFF</td><td>524288</td><td class="listing">memory</td>
 </tr>
 </table>
 <br>
@@ -75,22 +69,22 @@
 <th align="left" width="50%">Section</th><th align="left" width="50%">Region</th>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.text</td><td>onchip_memory2_0</td>
+<td>.text</td><td>sram_0</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.rodata</td><td>onchip_memory2_0</td>
+<td>.rodata</td><td>sram_0</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.rwdata</td><td>onchip_memory2_0</td>
+<td>.rwdata</td><td>sram_0</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.bss</td><td>onchip_memory2_0</td>
+<td>.bss</td><td>sram_0</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.heap</td><td>onchip_memory2_0</td>
+<td>.heap</td><td>sram_0</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.stack</td><td>onchip_memory2_0</td>
+<td>.stack</td><td>sram_0</td>
 </tr>
 </table>
 <h3>Settings</h3>
@@ -402,7 +396,7 @@
 <td width="20%">Default Value:</td><td>0</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>1</td>
+<td width="20%">Value:</td><td>0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>Boolean</td>
@@ -672,7 +666,7 @@
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>onchip_memory2_0</td>
+<td width="20%">Value:</td><td>sram_0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>
@@ -726,7 +720,7 @@
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>onchip_memory2_0</td>
+<td width="20%">Value:</td><td>sram_0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>

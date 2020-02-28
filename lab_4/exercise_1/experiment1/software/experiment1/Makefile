@@ -142,9 +142,7 @@ ACDS_VERSION := 12.0sp2
 ELF := experiment1.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS += PB_button.c
-C_SRCS += custom_counter.c
-C_SRCS += experiment1.c
+C_SRCS := experiment1.c
 CXX_SRCS :=
 ASM_SRCS :=
 
