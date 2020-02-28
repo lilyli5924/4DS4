@@ -150,8 +150,8 @@ int main()
                 status = sd_card_write(file_handle, 0x4D); //M
 
                 status = sd_card_write(file_handle, 0x36); //size
-                status = sd_card_write(file_handle, 0x4);
-                status = sd_card_write(file_handle, 0x38);
+                status = sd_card_write(file_handle, 0x10);
+                status = sd_card_write(file_handle, 0xE);
                 status = sd_card_write(file_handle, 0x0);
 
                 status = sd_card_write(file_handle, 0x0); //Reserved
@@ -192,8 +192,8 @@ int main()
                 status = sd_card_write(file_handle, 0x0);
 
                 status = sd_card_write(file_handle, 0x0); //Size of raw BMP data
-                status = sd_card_write(file_handle, 0x4);
-                status = sd_card_write(file_handle, 0x38);
+                status = sd_card_write(file_handle, 0x10);
+                status = sd_card_write(file_handle, 0xE);
                 status = sd_card_write(file_handle, 0x0);
 
                 status = sd_card_write(file_handle, 0x13); //horizontal resolution
@@ -216,22 +216,20 @@ int main()
                 status = sd_card_write(file_handle, 0x0);
                 status = sd_card_write(file_handle, 0x0);
 
-                for (i = 0; i < NUM_LINES; i++) {
-                    LTC_Read_Image_Line(R_vals, G_vals, B_vals);
-                    if (i % 2 == 1) {
-                    	for (j = 1; j < LINE_LEN; j+=2) {
-                    		IOWR(LED_RED_O_BASE, 0, i*640+j);
-                    		// Change the endian from big to little
-                    		status = sd_card_write(file_handle, B_vals[j]);
-                    		if (!status) printf("Write fail: B %d %d\n", i, j);
-                    		status = sd_card_write(file_handle, G_vals[j]);
-                    		if (!status) printf("Write fail: G %d %d\n", i, j);
-                    		status = sd_card_write(file_handle, R_vals[j]);
-                    		if (!status) printf("Write fail: R %d %d\n", i, j);
-                    	}
-                    }
-                    else {
-                    	continue;
+                for (i = 1; i <= NUM_LINES; i++) {
+                	LTC_Read_Image_Line(R_vals, G_vals, B_vals);
+                	if (i % 2 == 1) {
+                		continue;
+                	}
+                    for (j = 1; j <= LINE_LEN; j+=2) {
+                    	IOWR(LED_RED_O_BASE, 0, i*640+j);
+                    	// Change the endian from big to little
+                    	status = sd_card_write(file_handle, B_vals[j]);
+                    	if (!status) printf("Write fail: B %d %d\n", i, j);
+                    	status = sd_card_write(file_handle, G_vals[j]);
+                    	if (!status) printf("Write fail: G %d %d\n", i, j);
+                    	status = sd_card_write(file_handle, R_vals[j]);
+                    	if (!status) printf("Write fail: R %d %d\n", i, j);
                     }
                 }
                 LTC_Switch_HW_Mode();
