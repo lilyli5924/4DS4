@@ -1,0 +1,51 @@
+// Copyright by Adam Kinsman, Henry Ko and Nicola Nicolici
+// Developed for the Embedded Systems course (COE4DS4)
+// Department of Electrical and Computer Engineering
+// McMaster University
+// Ontario, Canada
+
+#include "define.h"
+
+// ISR when the counter is expired
+void handle_dram_interrupts(data* values)
+{
+	short int min = 0;
+	short int min_out = 0;
+	printf("INTERRUPT! \n");
+	printf("irq: %d \n",IORD(CUSTOM_DRAM_COMPONENT_0_IRQ, 3));
+	min = IORD(CUSTOM_DRAM_COMPONENT_0_BASE, 2);
+	min_out = (min & 0x8000) ? ~min + 1 : min;
+//	if (min & 0x8000){
+//		printf("Hardware Minimum value: -%d\n",min_out);
+//	}
+//	else {
+//		printf("Hardware Minimum value: %d\n",min_out);
+//	}
+	//printf("Hardware Maximum value: %d\n",IORD(CUSTOM_DRAM_COMPONENT_0_BASE, 4));
+	//printf("Hardware number of Minimum value: %d\n",IORD(CUSTOM_DRAM_COMPONENT_0_BASE, 3));
+	//printf("Hardware number of Maximum value: %d\n",IORD(CUSTOM_DRAM_COMPONENT_0_BASE, 5));
+	printf("Hardware number of distinct value: %d\n",IORD(CUSTOM_DRAM_COMPONENT_0_BASE, 6));
+
+	//printf("Software minimum value: %d\n", values->min);
+	//printf("Software maximum value: %d\n", values->max);
+	//printf("Software number of minimum value: %d\n", values->num_min);
+	//printf("Software number of maximum value: %d\n", values->num_max);
+	printf("Software distinct value: %d\n", values->distinct);
+	if(IORD(CUSTOM_DRAM_COMPONENT_0_BASE, 6) != values->distinct)
+		printf("===================different\n");
+
+	IOWR(CUSTOM_DRAM_COMPONENT_0_BASE, 7, 0x0);
+	printf("irq: %d \n",IORD(CUSTOM_DRAM_COMPONENT_0_IRQ, 3));
+	values->iter = 0;
+	printf("Interrupt cleared, iter = %d \n", values->iter);
+	printf("\n");
+
+}
+
+
+// Function for initializing the ISR of the Counter
+void init_dram_irq(data* values) {
+	IOWR(CUSTOM_DRAM_COMPONENT_0_BASE, 7, 0x0);
+
+	alt_irq_register(CUSTOM_DRAM_COMPONENT_0_IRQ, (void*) values, (void*)handle_dram_interrupts );
+}

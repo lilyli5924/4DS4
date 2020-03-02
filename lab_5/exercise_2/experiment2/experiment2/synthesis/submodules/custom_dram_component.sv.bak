@@ -1,0 +1,102 @@
+/*
+Copyright by Henry Ko and Nicola Nicolici
+Developed for the Digital Systems Design course (COE3DQ4)
+Department of Electrical and Computer Engineering
+McMaster University
+Ontario, Canada
+*/
+
+`timescale 1ns/100ps
+`default_nettype none
+
+module custom_dram_component (
+		input logic clock,
+		input logic resetn,
+
+		input  logic [2:0] 	address, // Base address offset
+		input  logic 		chipselect,
+		input  logic 		read,     // read enable
+		input  logic 		write,    // write_enable
+		output logic [31:0]	readdata, // Software config input
+		input  logic [31:0]	writedata,
+		output logic dram_done_irq
+		
+);
+
+logic [8:0] read_address, write_address;
+logic [15:0] write_data_b;
+logic write_enable_b;
+logic [15:0] read_data_a;
+logic [15:0] read_data_b;
+logic [15:0] min, num_min, max, num_max, num_distinct;
+logic load, load_config;
+
+assign dram_done_irq = 1'd0;
+
+assign min = 16'd2;
+assign num_min = 16'd3;
+assign max = 16'd4;
+assign num_max = 16'd5;
+assign num_distinct = 16'd6;
+
+// Instantiate RAM0
+dual_port_RAM0 dual_port_RAM_inst0 (
+	.address_a ( read_address ),
+	.address_b ( write_address ),
+	.clock ( clock ),
+	.data_a ( 16'h00 ),
+	.data_b ( write_data_b),
+	.wren_a ( 1'b0 ),
+	.wren_b ( write_enable_b ),
+	.q_a ( read_data_a ),
+	.q_b ( read_data_b )
+	);
+
+// 1. searching logic
+// 2. interrupt
+// 3. how to connect software to dpram
+
+// for getting the configuration from NIOS
+always_ff @ (posedge clock or negedge resetn) begin
+	if (!resetn) begin
+		write_enable_b <= 'd0;
+		load <= 1'b0;
+		load_config <= 'd0;
+	end else begin
+		load <= 1'b0;
+		if (chipselect & write) begin
+			case (address)
+			'd0: begin 
+				write_address <= writedata[24:16];
+				write_data_b <= writedata[15:0];
+				write_enable_b <= writedata[25];
+			end
+			'd7: begin
+				load <= writedata[31];
+				load_config <= writedata[0];
+			end
+			endcase
+		end
+	end
+end
+
+// for sending information to NIOS
+always_ff @ (posedge clock or negedge resetn) begin
+	if (!resetn) begin
+		readdata <= 'd0;
+	end else begin
+		if (chipselect & read) begin
+			case (address)
+			'd1: readdata <= {16'd0, read_data_a};
+			'd2: readdata <= {16'd0, min};
+			'd3: readdata <= {16'd0, num_min};
+			'd4: readdata <= {16'd0, max};
+			'd5: readdata <= {16'd0, num_max};
+			'd6: readdata <= {16'd0, num_distinct};
+			endcase
+		end
+	end
+end
+
+
+endmodule
