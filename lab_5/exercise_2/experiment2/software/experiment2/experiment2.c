@@ -5,8 +5,7 @@
 // Ontario, Canada
 
 #include "define.h"
-extern volatile SEARCHING;
-#define testcase 1
+
 int FindMin (short int *array) {
 	int minimum,c;
 	minimum = array[0];
