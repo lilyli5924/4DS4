@@ -20,9 +20,9 @@ void handle_dram_interrupts(data* values)
 	else {
 		printf("Hardware Minimum value: %d\n",min_out);
 	}
-//	printf("Hardware Maximum value: %d\n",IORD(CUSTOM_DRAM_COMPONENT_0_BASE, 4));
-//	printf("Hardware number of Minimum value: %d\n",IORD(CUSTOM_DRAM_COMPONENT_0_BASE, 3));
-//	printf("Hardware number of Maximum value: %d\n",IORD(CUSTOM_DRAM_COMPONENT_0_BASE, 5));
+	printf("Hardware Maximum value: %d\n",IORD(CUSTOM_DRAM_COMPONENT_0_BASE, 4));
+	printf("Hardware number of Minimum value: %d\n",IORD(CUSTOM_DRAM_COMPONENT_0_BASE, 3));
+	printf("Hardware number of Maximum value: %d\n",IORD(CUSTOM_DRAM_COMPONENT_0_BASE, 5));
 	printf("Hardware number of distinct value: %d\n",IORD(CUSTOM_DRAM_COMPONENT_0_BASE, 6));
 
 	printf("Software minimum value: %d\n", values->min);

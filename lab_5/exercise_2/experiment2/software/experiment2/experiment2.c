@@ -6,7 +6,7 @@
 
 #include "define.h"
 extern volatile SEARCHING;
-
+#define testcase 1
 int FindMin (short int *array) {
 	int minimum,c;
 	minimum = array[0];
@@ -141,41 +141,38 @@ int main()
 	int i,j;
 
 	printf("Generating random data for array...\n");
-	// Generate 5 test cases
-	for (j = 0; j < 9; j++) {
-		usleep(200000);
-		for (i = 0; i < 512; i++) {
-			data_set[i] = (rand() % 65536) - 32768;
-			// Write random numbers to dpram
-			dram_in = (1 << 25) + ((i & 0x1ff) << 16) + (data_set[i] & 0xffff);
-			IOWR(CUSTOM_DRAM_COMPONENT_0_BASE,0,dram_in);
 
-			// Write the address and data information for further
-			dram_in = (0 << 25) + ((i & 0x1ff) << 16) + (data_set[i]& 0xffff);
-			IOWR(CUSTOM_DRAM_COMPONENT_0_BASE,0,dram_in);
+	for (i = 0; i < 512; i++) {
+		data_set[i] = (rand() % 512) - 256;
+		// Write random numbers to dpram
+		dram_in = (1 << 25) + ((i & 0x1ff) << 16) + (data_set[i] & 0xffff);
+		IOWR(CUSTOM_DRAM_COMPONENT_0_BASE,0,dram_in);
 
-			sanity = IORD(CUSTOM_DRAM_COMPONENT_0_BASE,1 );
-			sanity_check = (sanity & 0x8000) ? ~sanity + 1 : sanity;
+		// Write the address and data information for further
+		dram_in = (0 << 25) + ((i & 0x1ff) << 16) + (data_set[i]& 0xffff);
+		IOWR(CUSTOM_DRAM_COMPONENT_0_BASE,0,dram_in);
 
-			if (i < 5) {
-				if (sanity & 0x8000){
-					printf("Sanity check: %d\n",sanity_check);
-				}
-				else {
-					printf("Sanity check: %d\n",sanity_check);
-				}
+		sanity = IORD(CUSTOM_DRAM_COMPONENT_0_BASE,1 );
+		sanity_check = (sanity & 0x8000) ? ~sanity + 1 : sanity;
+
+		if (i < 5) {
+			if (sanity & 0x8000){
+				printf("Sanity check: %d\n",sanity_check);
+			}
+			else {
+				printf("Sanity check: %d\n",sanity_check);
 			}
 		}
-		software.min = FindMin(data_set);
-		software.max = FindMax(data_set);
-		software.num_min = FindNumMin(data_set,software.min);
-		software.num_max = FindNumMax(data_set,software.max);
-		software.distinct = countDistinct(data_set,512);
-
-		// Start searching
-		IOWR(CUSTOM_DRAM_COMPONENT_0_BASE,7,0x80000001);
-		init_dram_irq(&software);
 	}
+	software.min = FindMin(data_set);
+	software.max = FindMax(data_set);
+	software.num_min = FindNumMin(data_set,software.min);
+	software.num_max = FindNumMax(data_set,software.max);
+	software.distinct = countDistinct(data_set,512);
+
+	// Start searching
+	IOWR(CUSTOM_DRAM_COMPONENT_0_BASE,7,0x80000001);
+	init_dram_irq(&software);
 
 	while(1);
 
