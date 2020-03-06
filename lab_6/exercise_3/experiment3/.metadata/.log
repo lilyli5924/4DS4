@@ -1,0 +1,198 @@
+!SESSION 2020-03-06 09:31:01.956 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-03-06 09:32:00.842
+!MESSAGE Indexed 'experiment3_bsp' (93 sources, 114 headers) in 1.72 sec: 4,549 declarations; 12,450 references; 0 unresolved inclusions; 1 syntax errors; 17 unresolved names (0.10%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-03-06 09:32:01.029
+!MESSAGE Indexed 'experiment3' (4 sources, 55 headers) in 0.19 sec: 1,963 declarations; 2,064 references; 8 unresolved inclusions; 0 syntax errors; 98 unresolved names (2.38%)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-03-06 09:35:30.439
+!MESSAGE The system console model is invalid. Cannot launch.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:36:05.129
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:36:07.334
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:42:48.215
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:42:50.332
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:47:46.439
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:47:47.470
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:47:49.567
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:49:08.206
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:49:09.206
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:49:11.284
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:50:26.980
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:50:27.980
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:50:30.058
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:52:41.169
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:52:42.762
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:52:44.871
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:59:36.259
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:59:37.274
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 09:59:39.352
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:03:13.123
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:03:14.139
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:03:16.232
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:34:48.764
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:34:50.893
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:36:14.754
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:36:15.785
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:36:17.865
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:38:28.650
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:38:29.665
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:38:31.758
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:40:24.879
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:40:25.895
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:40:27.988
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:46:49.296
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:46:50.312
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:46:52.413
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:58:43.244
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:58:44.259
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 10:58:46.353
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 11:08:16.231
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 11:08:17.278
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 11:08:19.372
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 11:09:35.807
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 11:09:36.822
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-03-06 11:09:38.934
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/12.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --reset-target /cygdrive/c/Users/lim14/coe4ds4_lab6_2020/coe4ds4_lab6_2020/experiment3/software/experiment3/experiment3.elf]
+!SESSION 2020-03-06 11:13:59.614 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.ui 4 4 2020-03-06 11:14:04.801
+!MESSAGE Could not create view: 'org.eclipse.ui.internal.introview'.
+
+!ENTRY org.eclipse.ui 4 0 2020-03-06 11:14:05.863
+!MESSAGE Problems occurred restoring workbench.
+!SUBENTRY 1 unknown 0 0 2020-03-06 11:14:05.863
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2020-03-06 11:14:05.863
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2020-03-06 11:14:05.863
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2020-03-06 11:14:05.863
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.ui 4 0 2020-03-06 11:14:05.863
+!MESSAGE Unable to restore perspective: Workspace - Nios II.
+!SUBENTRY 2 org.eclipse.ui 0 0 2020-03-06 11:14:05.863
+!MESSAGE Problems occurred restoring perspective.
+!SUBENTRY 3 org.eclipse.ui 0 0 2020-03-06 11:14:05.863
+!MESSAGE 
+!SUBENTRY 2 unknown 0 0 2020-03-06 11:14:05.863
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-03-06 11:14:05.863
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-03-06 11:14:05.863
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-03-06 11:14:05.863
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-03-06 11:14:05.863
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-03-06 11:14:05.863
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-03-06 11:14:05.863
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-03-06 11:14:05.863
+!MESSAGE OK
+!SUBENTRY 2 org.eclipse.ui 4 0 2020-03-06 11:14:05.863
+!MESSAGE Could not find view: org.eclipse.ui.internal.introview
+!SUBENTRY 1 unknown 0 0 2020-03-06 11:14:05.863
+!MESSAGE OK
