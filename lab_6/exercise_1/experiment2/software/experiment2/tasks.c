@@ -50,20 +50,19 @@ void periodic_task1(void* pdata) {
 
 		#if MY_NON_PREEMPTIVE_SCH == 1
 			OSSchedLock();
-			printf("\n");
 			printf("NON-PREEMPTIVE, task 1 OSTick value: %d \n", OSTimeGet());
-			printf("Start periodic_task1 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
-			custom_delay(task_info_ptr->execution_time);
-			printf("End   periodic_task1 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
-			OSSchedUnlock();
-			OSTimeDlyHMSM(0, 0, task_info_ptr->os_delay, 0);
 		#else
-			printf("\n");
 			printf("PREEMPTIVE, task 1 OSTick value: %d \n", OSTimeGet());
-			printf("Start periodic_task1 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
-			custom_delay(task_info_ptr->execution_time);
-			printf("End   periodic_task1 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
-			OSTimeDlyHMSM(0, 0, task_info_ptr->os_delay, 0);
+	#endif
+
+		printf("\n");
+		printf("Start periodic_task1 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
+		custom_delay(task_info_ptr->execution_time);
+		printf("End   periodic_task1 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
+		OSTimeDlyHMSM(0, 0, task_info_ptr->os_delay, 0);
+
+		#if MY_NON_PREEMPTIVE_SCH == 1
+		OSSchedUnlock();
 		#endif
 	}
 }
@@ -79,20 +78,20 @@ void periodic_task2(void* pdata) {
 
 		#if MY_NON_PREEMPTIVE_SCH == 1
 			OSSchedLock();
-			printf("\n");
 			printf("NON-PREEMPTIVE, task 2 OSTick value: %d \n", OSTimeGet());
-			printf("Start periodic_task2 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
-			custom_delay(task_info_ptr->execution_time);
-			printf("End   periodic_task2 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
-			OSSchedUnlock();
-			OSTimeDlyHMSM(0, 0, task_info_ptr->os_delay, 0);
 		#else
-			printf("\n");
 			printf("PREEMPTIVE, task 2 OSTick value: %d \n", OSTimeGet());
-			printf("Start periodic_task2 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
-			custom_delay(task_info_ptr->execution_time);
-			printf("End   periodic_task2 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
-			OSTimeDlyHMSM(0, 0, task_info_ptr->os_delay, 0);
+		#endif
+
+		printf("\n");
+
+		printf("Start periodic_task2 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
+		custom_delay(task_info_ptr->execution_time);
+		printf("End   periodic_task2 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
+		OSTimeDlyHMSM(0, 0, task_info_ptr->os_delay, 0);
+
+		#if MY_NON_PREEMPTIVE_SCH == 1
+			OSSchedUnlock();
 		#endif
 	}
 }
