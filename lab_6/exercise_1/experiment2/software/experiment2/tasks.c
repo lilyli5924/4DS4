@@ -47,23 +47,23 @@ void periodic_task1(void* pdata) {
 
 	task_info_ptr = (task_info_struct *)pdata;
 	while (1) {
+		printf("task 1 OSTick value: %d \n", OSTimeGet());
 
 		#if MY_NON_PREEMPTIVE_SCH == 1
 			OSSchedLock();
-			printf("NON-PREEMPTIVE, task 1 OSTick value: %d \n", OSTimeGet());
-		#else
-			printf("PREEMPTIVE, task 1 OSTick value: %d \n", OSTimeGet());
-	#endif
+		#endif
 
-		printf("\n");
+
 		printf("Start periodic_task1 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
 		custom_delay(task_info_ptr->execution_time);
 		printf("End   periodic_task1 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
-		OSTimeDlyHMSM(0, 0, task_info_ptr->os_delay, 0);
 
 		#if MY_NON_PREEMPTIVE_SCH == 1
-		OSSchedUnlock();
+			OSSchedUnlock();
 		#endif
+
+		OSTimeDly(task_info_ptr->os_delay);
+
 	}
 }
 
@@ -75,24 +75,23 @@ void periodic_task2(void* pdata) {
 
 	task_info_ptr = (task_info_struct *)pdata;
 	while (1) {
+		printf("task 2 OSTick value: %d \n", OSTimeGet());
 
 		#if MY_NON_PREEMPTIVE_SCH == 1
 			OSSchedLock();
-			printf("NON-PREEMPTIVE, task 2 OSTick value: %d \n", OSTimeGet());
-		#else
-			printf("PREEMPTIVE, task 2 OSTick value: %d \n", OSTimeGet());
 		#endif
 
-		printf("\n");
 
 		printf("Start periodic_task2 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
 		custom_delay(task_info_ptr->execution_time);
 		printf("End   periodic_task2 (execution_time: %4d ms) (os_delay: %1d s) (%d priority)\n", task_info_ptr->execution_time, task_info_ptr->os_delay, task_info_ptr->priority);
-		OSTimeDlyHMSM(0, 0, task_info_ptr->os_delay, 0);
 
 		#if MY_NON_PREEMPTIVE_SCH == 1
 			OSSchedUnlock();
 		#endif
+
+		OSTimeDly(task_info_ptr->os_delay);
+
 	}
 }
 
@@ -132,14 +131,14 @@ void custom_scheduler(void *pdata) {
 			task_info[i].execution_time = 7 * 200;
 			//Nicole: 6 char
 			os_delay = 6 * 700;
-			task_info[i].os_delay = (6 * 700)/1000;
+			task_info[i].os_delay = 6 * 700;
 		}
 		else {
 			//Wu: 2 char
 			task_info[i].execution_time = 2 * 200;
 			//Li: 2 char, os_delay in seconds
 			os_delay = 2 * 700;
-			task_info[i].os_delay = (2 * 700)/1000;
+			task_info[i].os_delay = 2 * 700;
 		}
 		task_info[i].priority = num_active_task;
 
