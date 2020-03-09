@@ -104,24 +104,17 @@ void custom_task_0(void* pdata) {
 			printf("-GRPAMutex obtained...\n");
 		#endif
 
-		printf("-Read input from swtich group A...\n");
-		alt_u32 sw_grp_a;
-		sw_grp_a = IORD(SWITCH_GRPA_I_BASE, 0);
-		printf("swtich A input value: %x \n", sw_grp_a);
-
-		#if MY_MUTEX_ENABLE == 1
-			printf("-Releasing GRPAMutex...\n");
-			return_code = OSMutexPost(GRPAMutex);
-			alt_ucosii_check_return_code(return_code);
-			printf("-GRPAMutex released (1)...\n");
-		#endif
-
 		#if MY_MUTEX_ENABLE == 1
 			printf("-Waiting for GREENMutex...\n");
 			OSMutexPend(GREENMutex, 0, &return_code);
 			alt_ucosii_check_return_code(return_code);
 			printf("-GREENMutex obtained...\n");
 		#endif
+
+		printf("-Read input from swtich group A...\n");
+		alt_u32 sw_grp_a;
+		sw_grp_a = IORD(SWITCH_GRPA_I_BASE, 0);
+		printf("swtich A input value: %x \n", sw_grp_a);
 
 		printf("-Light up GREEN LEDs for 1.25s...\n");
 		IOWR(LED_GREEN_O_BASE, 0, sw_grp_a & 0x1FF);
@@ -138,6 +131,14 @@ void custom_task_0(void* pdata) {
 			alt_ucosii_check_return_code(return_code);
 			printf("-GREENMutex released...\n");
 		#endif
+
+		#if MY_MUTEX_ENABLE == 1
+			printf("-Releasing GRPAMutex...\n");
+			return_code = OSMutexPost(GRPAMutex);
+			alt_ucosii_check_return_code(return_code);
+			printf("-GRPAMutex released (1)...\n");
+		#endif
+
 		printf("done\n");
 	}
 }
@@ -163,24 +164,17 @@ void custom_task_1(void* pdata) {
 			printf("-GRPAMutex obtained...\n");
 		#endif
 
-		printf("-Read input from swtich group A...\n");
-		alt_u32 sw_grp_a;
-		sw_grp_a = IORD(SWITCH_GRPA_I_BASE, 0);
-		printf("swtich A input value: %x \n", sw_grp_a);
-
-		#if MY_MUTEX_ENABLE == 1
-			printf("-Releasing GRPAMutex...\n");
-			return_code = OSMutexPost(GRPAMutex);
-			alt_ucosii_check_return_code(return_code);
-			printf("-GRPAMutex released (1)...\n");
-		#endif
-
 		#if MY_MUTEX_ENABLE == 1
 			printf("-Waiting for REDMutex...\n");
 			OSMutexPend(REDMutex, 0, &return_code);
 			alt_ucosii_check_return_code(return_code);
 			printf("-REDMutex obtained...\n");
 		#endif
+
+		printf("-Read input from swtich group A...\n");
+		alt_u32 sw_grp_a;
+		sw_grp_a = IORD(SWITCH_GRPA_I_BASE, 0);
+		printf("swtich A input value: %x \n", sw_grp_a);
 
 		printf("-Light up RED LEDs for 1.65s...\n");
 		IOWR(LED_RED_O_BASE, 0, sw_grp_a & 0x1FF);
@@ -197,6 +191,14 @@ void custom_task_1(void* pdata) {
 			alt_ucosii_check_return_code(return_code);
 			printf("-REDMutex released...\n");
 		#endif
+
+		#if MY_MUTEX_ENABLE == 1
+			printf("-Releasing GRPAMutex...\n");
+			return_code = OSMutexPost(GRPAMutex);
+			alt_ucosii_check_return_code(return_code);
+			printf("-GRPAMutex released (1)...\n");
+		#endif
+
 		printf("done\n");
 	}
 }
@@ -222,24 +224,17 @@ void custom_task_2(void* pdata) {
 			printf("-GRPBMutex obtained...\n");
 		#endif
 
-		printf("-Read input from swtich group B...\n");
-		alt_u32 sw_grp_b;
-		sw_grp_b = IORD(SWITCH_GRPB_I_BASE, 0);
-		printf("swtich B input value: %x \n", sw_grp_b);
-
-		#if MY_MUTEX_ENABLE == 1
-			printf("-Releasing GRPBMutex...\n");
-			return_code = OSMutexPost(GRPBMutex);
-			alt_ucosii_check_return_code(return_code);
-			printf("-GRPBMutex released (1)...\n");
-		#endif
-
 		#if MY_MUTEX_ENABLE == 1
 			printf("-Waiting for GREENMutex...\n");
 			OSMutexPend(GREENMutex, 0, &return_code);
 			alt_ucosii_check_return_code(return_code);
 			printf("-GREENMutex obtained...\n");
 		#endif
+
+		printf("-Read input from swtich group B...\n");
+		alt_u32 sw_grp_b;
+		sw_grp_b = IORD(SWITCH_GRPB_I_BASE, 0);
+		printf("swtich B input value: %x \n", sw_grp_b);
 
 		// Thursday lab: 1.45 seconds
 		printf("-Light up Green LEDs for 1.45s...\n");
@@ -257,6 +252,14 @@ void custom_task_2(void* pdata) {
 			alt_ucosii_check_return_code(return_code);
 			printf("-GREENMutex released...\n");
 		#endif
+
+		#if MY_MUTEX_ENABLE == 1
+			printf("-Releasing GRPBMutex...\n");
+			return_code = OSMutexPost(GRPBMutex);
+			alt_ucosii_check_return_code(return_code);
+			printf("-GRPBMutex released (1)...\n");
+		#endif
+
 		printf("done\n");
 	}
 }
@@ -284,24 +287,17 @@ void custom_task_3(void* pdata) {
 			printf("-GRPBMutex obtained...\n");
 		#endif
 
-		printf("-Read input from swtich group B...\n");
-		alt_u32 sw_grp_b;
-		sw_grp_b = IORD(SWITCH_GRPB_I_BASE, 0);
-		printf("swtich B input value: %x \n", sw_grp_b);
-
-		#if MY_MUTEX_ENABLE == 1
-			printf("-Releasing GRPBMutex...\n");
-			return_code = OSMutexPost(GRPBMutex);
-			alt_ucosii_check_return_code(return_code);
-			printf("-GRPBMutex released (1)...\n");
-		#endif
-
 		#if MY_MUTEX_ENABLE == 1
 			printf("-Waiting for REDMutex...\n");
 			OSMutexPend(REDMutex, 0, &return_code);
 			alt_ucosii_check_return_code(return_code);
 			printf("-REDMutex obtained...\n");
 		#endif
+
+		printf("-Read input from swtich group B...\n");
+		alt_u32 sw_grp_b;
+		sw_grp_b = IORD(SWITCH_GRPB_I_BASE, 0);
+		printf("swtich B input value: %x \n", sw_grp_b);
 
 		// Thursday lab: 1.45 seconds
 		printf("-Light up Red LEDs for 1.45s...\n");
@@ -319,6 +315,14 @@ void custom_task_3(void* pdata) {
 			alt_ucosii_check_return_code(return_code);
 			printf("-REDMutex released...\n");
 		#endif
+
+		#if MY_MUTEX_ENABLE == 1
+			printf("-Releasing GRPBMutex...\n");
+			return_code = OSMutexPost(GRPBMutex);
+			alt_ucosii_check_return_code(return_code);
+		printf("-GRPBMutex released (1)...\n");
+		#endif
+
 		printf("done\n");
 	}
 }
