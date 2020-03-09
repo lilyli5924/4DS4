@@ -1,0 +1,117 @@
+Start main...
+PB initialized...
+SEG7 initialized...
+LCD device opened.
+Character LCD initialized...
+Reset performance counter...
+Starting uCOS...
+Init data structs...
+Creating custom_scheduler...
+Starting custom scheduler...
+Exercise 1 for non-preemptive scheduling...
+-Creating periodic_task1: execution_time_tick = 1400, os_delay_time = 4200
+-Creating periodic_task2: execution_time_tick = 400, os_delay_time = 1400
+Finish creating initial tasks...
+Printing task info:
+Priority 0: valid=1, task_id=0, period=5600, exec_time=1400, os_delay=4200, pri=0
+Priority 1: valid=1, task_id=1, period=1800, exec_time=400, os_delay=1400, pri=1
+task 1 OSTick value: 150 
+Start periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+End   periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+task 2 OSTick value: 1554 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 2 OSTick value: 3357 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 2 OSTick value: 5161 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 1 OSTick value: 5754 
+Start periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+End   periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+task 2 OSTick value: 7158 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 2 OSTick value: 8961 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 2 OSTick value: 10764 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 1 OSTick value: 11358 
+Start periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+End   periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+task 2 OSTick value: 12763 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+
+
+
+
+
+
+Start main...
+PB initialized...
+SEG7 initialized...
+LCD device opened.
+Character LCD initialized...
+Reset performance counter...
+Starting uCOS...
+Init data structs...
+Creating custom_scheduler...
+Starting custom scheduler...
+Exercise 1 for preemptive scheduling...
+-Creating periodic_task1: execution_time_tick = 1400, os_delay_time = 4200
+-Creating periodic_task2: execution_time_tick = 400, os_delay_time = 1400
+Finish creating initial tasks...
+Printing task info:
+Priority 0: valid=1, task_id=0, period=5600, exec_time=1400, os_delay=4200, pri=0
+Priority 1: valid=1, task_id=1, period=1800, exec_time=400, os_delay=1400, pri=1
+task 1 OSTick value: 149 
+Start periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+End   periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+task 2 OSTick value: 1553 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 2 OSTick value: 3357 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 2 OSTick value: 5160 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 1 OSTick value: 5753 
+Start periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+End   periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+task 2 OSTick value: 7156 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 2 OSTick value: 8961 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 2 OSTick value: 10765 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 1 OSTick value: 11356 
+Start periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+End   periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+task 2 OSTick value: 12760 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 2 OSTick value: 14564 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 2 OSTick value: 16367 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 1 OSTick value: 16960 
+Start periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+End   periodic_task1 (execution_time: 1400 ms) (os_delay: 4200 s) (0 priority)
+task 2 OSTick value: 18364 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+task 2 OSTick value: 20168 
+Start periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+End   periodic_task2 (execution_time:  400 ms) (os_delay: 1400 s) (1 priority)
+
+
